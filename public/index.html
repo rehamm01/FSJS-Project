@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>KY Art Inventory</title>
+
+		<!--- Eventually replace with my own CSS -->		
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  -->
+		
+		<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700,800" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox.min.css">
+
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<img src="../img/logo.svg" />
+				<span class="aria">KY Art Inventory</span>
+			</h1>
+
+			<div class="navigation">
+				<button class="header-button"><span> </span></button>
+
+                <div class="header-nav">
+                  <ul>
+                    <li><button type="button" class="ancient" onclick="">Art of Ancient Cultures</button></li>
+                    <li><button type="button" class="african" onclick="">African Art</button></li>
+                    <li><button type="button" class="native-american" onclick="">Native American Art</button></li>
+                    <li><button type="button" class="euro1" onclick="">European Art, 1300-1700</button></li>
+                    <li><button type="button" class="euro2" onclick="">European Art, 1700-1800</button></li>
+                    <li><button type="button" class="euro3" onclick="">Euro/American Art, 1800-1900</button></li>
+                    <li><button type="button" class="euro4" onclick="">Euro/American Art, 1900-1945</button></li>
+                    <li><button type="button" class="euro5" onclick="">Euro/American Art, 1945-1980</button></li>
+                    <li><button type="button" class="dutch" onclick="">Dutch &amp; Flemish Art</button></li>
+                    <li><button type="button" class="contemporary" onclick="">Contemporary Art, 1980-Present</button></li>
+                    <li><button type="button" class="kentucky" onclick="">Art of Kentucky, 1800-1945</button></li>
+                    <li><button type="button" class="photography" onclick="">Photography</button></li>
+                  </ul>
+                </div>
+			</div>
+
+			<div class="search">
+				<button class="search-button"><span> </span></button>
+
+                <div class="search-container">
+                	<form>
+                		<label for="search">Search</label>
+						<input type="text" required>
+						<input type="button" value="Search">
+					</form>
+                </div>
+			</div>
+
+		</header>
+
+		<main>
+
+			<div id="form-container">
+				<p class="greeting"></p>
+				<form>
+					<div class="form-group">
+						<label for="file-title">Title</label>
+						<input type="text" class="form-control" id="file-title" placeholder="title of work">
+					</div>
+					<div class="form-group">
+						<label for="file-artist">Artist</label>
+						<input type="text" class="form-control" id="file-artist" placeholder="name of artist">
+					</div>
+					<div class="form-group">
+						<label for="file-year">year</label>
+						<input type="text" class="form-control" id="file-year" placeholder="year of creation">
+					</div>
+					<div class="form-group">
+						<label for="file-media">Media</label>
+						<input type="text" class="form-control" id="file-media" placeholder="art medium">
+					</div>
+					<div class="form-group">
+						<label for="file-category">Category</label>
+						<select name="Category">
+						  <option value="Art of Ancient Cultures">Art of Ancient Cultures</option>
+						  <option value="African Art">African Art</option>
+						  <option value="Native American Art">Native American Art</option>
+						  <option value="European Art, 1300-1700">European Art, 1300-1700</option>
+						  <option value="European Art, 1700-1800">European Art, 1700-1800</option>
+						  <option value="European and American Art, 1800-1900">European and American Art, 1800-1900</option>
+						  <option value="European and American Art, 1900-1945">European and American Art, 1900-1945</option>
+						  <option value="European and American Art, 1945-1980">European and American Art, 1945-1980</option>
+						  <option value="Dutch & Flemish Art">Dutch &amp; Flemish Art</option>
+						  <option value="Contemporary Art, 1980-Present">Contemporary Art, 1980-Present</option>
+						  <option value="Art of Kentucky, 1800-1945">Art of Kentucky, 1800-1945</option>
+						  <option value="Photography">Photography</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="file-museum">Museum</label>
+						<select name="Museum">
+							<option value="Speed Art Museum"> Speed Art Museum</option>
+							<option value="21c Louisville"> 21c Louisville</option>
+							<option value="21c Lexington"> 21c Lexington</option>
+							<option value="KMAC"> Kentucky Museum of Art and Craft</option>
+						</select>
+					</div>
+					<button type="button" onclick="submitFileForm()">Add</button>
+				</form>
+			</div>
+
+			<div id="list-container"></div>
+		</main>
+
+		<script id="list-template" type="text/x-handlebars-template">
+			<ul class="list-group">
+				{{#each files}}
+					<li id="{{id}}" class="list-group-item" location="{{museum}}" category="{{category}}">
+						<a data-fancybox data-options='{"src": "#hidden-content-d", "modal": true}' href="javascript:;">
+							<img src="../img/{{icon}}-400.jpg">
+							<h3>{{title}}</h3>
+							<h4>{{artist}}</h4>
+						</a>
+					</li>
+				{{/each}}
+			</ul>
+
+			<div style="display: none; width:80%; max-height: calc(100vh - 88px);" id="hidden-content-d">
+			{{#each files}}
+				<img src="../img/{{icon}}.jpg">
+				<div>
+					<h3>{{title}}</h3>
+					<h4>{{artist}}</h4>
+					<p>{{year}}</p>
+					<p>{{media}}</p>
+					<p>{{category}}</p>
+					<p>{{museum}}</p>
+					<button data-fancybox-close>Cancel</button>
+				</div>
+			{{/each}}
+			</div>
+		</script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+
+		<script src="/js/app.js"></script>
+		<script src="/js/front-end.js"></script>
+		<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				const data = { name: "Art Explorer" }
+				const greetingTemplate = "Greetings {{name}}! Kentucky Art Inventory helps you explore what the Art Museums of Kentucky have to offer! Have information about a piece of art that's missing from the Inventory? Submit your favorite works of art below.";
+				const greetingCompiled = Handlebars.compile(greetingTemplate);
+				const greetingRendered = greetingCompiled(data);
+
+				$( ".greeting" ).prepend( greetingRendered );
+				});
+
+				refreshFileList();
+
+		</script>
+
+	</body>
+
+</html>

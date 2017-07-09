@@ -1,0 +1,835 @@
+/*
+	KY Art Inventory Project 
+	Author: Rebecca Hammer
+*/
+/*----------------------------------------------------------------------
+	RESET
+----------------------------------------------------------------------*/
+/* line 22, ../scss/styles.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 33, ../scss/styles.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 37, ../scss/styles.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 41, ../scss/styles.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 46, ../scss/styles.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 51, ../scss/styles.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 56, ../scss/styles.scss */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 64, ../scss/styles.scss */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+/*----------------------------------------------------------------------
+	BASIC
+----------------------------------------------------------------------*/
+/* line 75, ../scss/styles.scss */
+html {
+  font-size: 62.5%;
+  font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+}
+
+/* line 80, ../scss/styles.scss */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  background: rgba(244, 244, 244, 0.75);
+  background: -moz-linear-gradient(top, rgba(244, 244, 244, 0.75) 75%, #e6e6e6 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(75%, rgba(244, 244, 244, 0.75)), color-stop(100%, #e6e6e6));
+  background: -webkit-linear-gradient(top, rgba(244, 244, 244, 0.75) 75%, #e6e6e6 100%);
+  background: -o-linear-gradient(top, rgba(244, 244, 244, 0.75) 75%, #e6e6e6 100%);
+  background: -ms-linear-gradient(top, rgba(244, 244, 244, 0.75) 75%, #e6e6e6 100%);
+  background: linear-gradient(to bottom, rgba(244, 244, 244, 0.75) 75%, #e6e6e6 100%);
+}
+
+/* line 93, ../scss/styles.scss */
+#page {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 98, ../scss/styles.scss */
+main {
+  overflow-x: hidden;
+  width: 100%;
+}
+/* line 101, ../scss/styles.scss */
+main:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 108, ../scss/styles.scss */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* line 114, ../scss/styles.scss */
+.wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+}
+
+/* line 121, ../scss/styles.scss */
+h1, h2, h3, h4 {
+  margin: 1rem 0;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* line 127, ../scss/styles.scss */
+h1 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+/* line 132, ../scss/styles.scss */
+h2 {
+  font-size: 2.0rem;
+  color: #fff;
+}
+
+/* line 137, ../scss/styles.scss */
+h3 {
+  font-size: 2.0rem;
+  margin-bottom: 0;
+}
+
+/* line 142, ../scss/styles.scss */
+h4 {
+  font-size: 1.6rem;
+  margin-top: 0;
+}
+
+/* line 147, ../scss/styles.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 151, ../scss/styles.scss */
+a:focus {
+  outline: 1px dotted black !important;
+}
+
+/* line 156, ../scss/styles.scss */
+p {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: .75rem;
+}
+
+/* line 162, ../scss/styles.scss */
+img {
+  width: 100%;
+}
+
+/* line 166, ../scss/styles.scss */
+button {
+  border: 0;
+  background: rgba(0, 0, 0, 0);
+  font-family: inherit;
+}
+
+/* line 172, ../scss/styles.scss */
+.aria {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999em;
+  z-index: -1;
+}
+
+/* line 180, ../scss/styles.scss */
+input {
+  border: 1px solid #bfbfbf;
+  border-radius: 0;
+}
+
+/*----------------------------------------------------------------------
+	HEADER
+----------------------------------------------------------------------*/
+/* line 190, ../scss/styles.scss */
+header {
+  position: relative;
+  background: url("../img/header.jpg") no-repeat;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top: 10px solid #00345b;
+  border-bottom: 2px solid #00345B;
+}
+@media screen and (min-width: 500px) {
+  /* line 190, ../scss/styles.scss */
+  header {
+    padding: 0;
+    height: 500px;
+  }
+}
+
+/* line 206, ../scss/styles.scss */
+h1 img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  left: 10%;
+}
+@media screen and (min-width: 500px) {
+  /* line 206, ../scss/styles.scss */
+  h1 img {
+    width: 400px;
+    left: calc(50% - 200px);
+  }
+}
+
+/*----------------------------------------------------------------------
+	NAVIGATION
+----------------------------------------------------------------------*/
+/* line 225, ../scss/styles.scss */
+.header-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  height: 100vh;
+  z-index: 9;
+  padding: 60px 0;
+}
+@media screen and (min-width: 900px) {
+  /* line 225, ../scss/styles.scss */
+  .header-nav {
+    position: fixed;
+    width: 230px;
+    height: 1000vh;
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+/* line 244, ../scss/styles.scss */
+.header-nav button {
+  width: 100%;
+  padding: 10px 15px 7px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin: 2px 0;
+  line-height: 1;
+}
+
+/* line 256, ../scss/styles.scss */
+.close-nav {
+  display: block;
+}
+
+/* line 260, ../scss/styles.scss */
+.header-button {
+  padding: 0;
+  margin: 0;
+  height: 28px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  z-index: 10;
+}
+@media screen and (min-width: 900px) {
+  /* line 275, ../scss/styles.scss */
+  .header-button.close-nav {
+    position: fixed;
+  }
+}
+/* line 282, ../scss/styles.scss */
+.header-button span,
+.header-button span:before,
+.header-button span:after {
+  width: 28px;
+  height: 5px;
+  background: #fff;
+  display: block;
+  position: relative;
+  content: '';
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+/* line 295, ../scss/styles.scss */
+.header-button span:before {
+  top: -10px;
+}
+/* line 299, ../scss/styles.scss */
+.header-button span:after {
+  bottom: -5px;
+}
+/* line 303, ../scss/styles.scss */
+.header-button.close-nav span {
+  background: transparent;
+  position: relative;
+}
+/* line 307, ../scss/styles.scss */
+.header-button.close-nav span:before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #00345B;
+}
+/* line 316, ../scss/styles.scss */
+.header-button.close-nav span:after {
+  top: -5px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  background: #00345B;
+}
+
+/*----------------------------------------------------------------------
+	SEARCH
+----------------------------------------------------------------------*/
+/* line 332, ../scss/styles.scss */
+.search-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 28px;
+  width: 28px;
+  padding: 0;
+  margin: 0;
+}
+/* line 341, ../scss/styles.scss */
+.search-button span {
+  background: url("../img/search.svg") no-repeat;
+  padding: 0;
+  margin: 0;
+  height: 28px;
+  width: 28px;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  z-index: 10;
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  /* line 357, ../scss/styles.scss */
+  .search-button.close-search {
+    position: fixed;
+    z-index: 10;
+  }
+}
+/* line 363, ../scss/styles.scss */
+.search-button.close-search span {
+  width: 28px;
+  height: 5px;
+  background: #00345B;
+  display: block;
+  position: relative;
+  content: '';
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background: transparent;
+  position: relative;
+}
+/* line 377, ../scss/styles.scss */
+.search-button.close-search span:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  position: relative;
+  content: "";
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #00345B;
+}
+/* line 391, ../scss/styles.scss */
+.search-button.close-search span:after {
+  width: 28px;
+  height: 5px;
+  display: block;
+  position: relative;
+  content: "";
+  top: -5px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  background: #00345B;
+}
+
+/* line 407, ../scss/styles.scss */
+.search-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  height: 100vh;
+  padding: 60px 0;
+}
+@media screen and (min-width: 900px) {
+  /* line 407, ../scss/styles.scss */
+  .search-container {
+    position: fixed;
+    right: 0;
+    width: 230px;
+    height: 1000vh;
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+/* line 426, ../scss/styles.scss */
+.search-container input[type="button"] {
+  border: 0;
+  background: #00345B;
+  text-indent: -99999rem;
+  background-image: url(../img/search.svg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 35px;
+  background-position: 3px;
+}
+/* line 437, ../scss/styles.scss */
+.search-container input[type="text"] {
+  display: inline-block;
+  width: calc(100% - 39px);
+}
+
+/*----------------------------------------------------------------------
+	ART CATEGORIES
+----------------------------------------------------------------------*/
+/* line 448, ../scss/styles.scss */
+.ancient {
+  background-color: #5bc0eb;
+}
+
+/* line 452, ../scss/styles.scss */
+.african {
+  background-color: #FF6214;
+}
+
+/* line 456, ../scss/styles.scss */
+.native-american {
+  background-color: #E0479E;
+}
+
+/* line 460, ../scss/styles.scss */
+.euro1 {
+  background-color: #95C623;
+}
+
+/* line 464, ../scss/styles.scss */
+.euro2 {
+  background-color: #571760;
+  color: #fff;
+}
+
+/* line 469, ../scss/styles.scss */
+.euro3 {
+  background-color: #FFD43A;
+}
+
+/* line 473, ../scss/styles.scss */
+.euro4 {
+  background-color: #0A2472;
+  color: #fff;
+}
+
+/* line 478, ../scss/styles.scss */
+.euro5 {
+  background-color: #C1292E;
+  color: #fff;
+}
+
+/* line 483, ../scss/styles.scss */
+.dutch {
+  background-color: #BAE6FF;
+}
+
+/* line 487, ../scss/styles.scss */
+.contemporary {
+  background-color: #B36CC9;
+}
+
+/* line 491, ../scss/styles.scss */
+.kentucky {
+  background-color: #8B1E3F;
+  color: #fff;
+}
+
+/* line 496, ../scss/styles.scss */
+.photography {
+  background-color: #6A6262;
+  color: #fff;
+}
+
+/*----------------------------------------------------------------------
+	FORM
+----------------------------------------------------------------------*/
+/* line 506, ../scss/styles.scss */
+#form-container {
+  background: #eaf5fc;
+  margin-bottom: 5rem;
+  -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 514, ../scss/styles.scss */
+form {
+  line-height: 1;
+  font-size: 1.6rem;
+  padding: 20px 10px;
+}
+@media screen and (min-width: 450px) {
+  /* line 514, ../scss/styles.scss */
+  form {
+    padding-bottom: 35px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  /* line 514, ../scss/styles.scss */
+  form {
+    padding: 20px 20px 35px;
+  }
+}
+/* line 528, ../scss/styles.scss */
+form label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 15px 0 3px;
+  border: 0;
+}
+/* line 536, ../scss/styles.scss */
+form button {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 4.5px;
+  display: block;
+  width: 100%;
+  height: 35px;
+  margin-top: 2rem;
+  color: #fff;
+  background: url(../img/header.jpg) no-repeat;
+  background-size: cover;
+  background-position: center -98px;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 500px) and (max-width: 999px) {
+  /* line 536, ../scss/styles.scss */
+  form button {
+    background-position: center -168px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  /* line 536, ../scss/styles.scss */
+  form button {
+    display: inline-block;
+    width: 13.6%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  /* line 536, ../scss/styles.scss */
+  form button {
+    width: 14.3%;
+    background-size: 200%;
+  }
+}
+/* line 567, ../scss/styles.scss */
+form input,
+form select {
+  width: 100%;
+  padding: 0 10px;
+  height: 35px;
+}
+/* line 576, ../scss/styles.scss */
+form .form-group:first-of-type label {
+  margin-top: 0;
+}
+@media screen and (min-width: 450px) {
+  /* line 573, ../scss/styles.scss */
+  form .form-group {
+    display: inline-block;
+    width: 49%;
+  }
+  /* line 585, ../scss/styles.scss */
+  form .form-group:nth-of-type(odd) {
+    margin-right: 1%;
+  }
+}
+@media screen and (min-width: 600px) {
+  /* line 573, ../scss/styles.scss */
+  form .form-group {
+    width: 31.9%;
+  }
+  /* line 596, ../scss/styles.scss */
+  form .form-group:nth-of-type(1), form .form-group:nth-of-type(2), form .form-group:nth-of-type(4), form .form-group:nth-of-type(5) {
+    margin-right: 1%;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 573, ../scss/styles.scss */
+  form .form-group {
+    width: 15.4%;
+  }
+  /* line 604, ../scss/styles.scss */
+  form .form-group:not(:last-of-type) {
+    margin-right: 1%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  /* line 573, ../scss/styles.scss */
+  form .form-group {
+    width: 13%;
+    margin-right: 1%;
+  }
+}
+
+/* line 617, ../scss/styles.scss */
+.greeting {
+  padding: 20px 10px 0;
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 30px;
+  max-width: 1000px;
+  margin: 0 auto 1rem;
+}
+@media screen and (min-width: 800px) {
+  /* line 617, ../scss/styles.scss */
+  .greeting {
+    padding: 40px 20px 15px;
+    font-size: 2.2rem;
+    line-height: 37px;
+  }
+}
+
+/*----------------------------------------------------------------------
+	ENTRIES
+----------------------------------------------------------------------*/
+/* line 637, ../scss/styles.scss */
+#list-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* line 642, ../scss/styles.scss */
+.list-group-item {
+  -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
+  margin: 10px 10px 20px;
+  position: relative;
+  background: #fff;
+}
+@media screen and (min-width: 550px) {
+  /* line 642, ../scss/styles.scss */
+  .list-group-item {
+    width: calc(50% - 22px);
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+@media screen and (min-width: 700px) {
+  /* line 642, ../scss/styles.scss */
+  .list-group-item {
+    width: calc(33% - 22px);
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 642, ../scss/styles.scss */
+  .list-group-item {
+    width: calc(25% - 22px);
+  }
+}
+/* line 665, ../scss/styles.scss */
+.list-group-item:focus, .list-group-item:hover {
+  background: -moz-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(20%, white), color-stop(100%, #eaf5fc));
+  background: -webkit-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
+  background: -o-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
+  background: -ms-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 20%, #eaf5fc 100%);
+}
+/* line 674, ../scss/styles.scss */
+.list-group-item:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 74px;
+  height: 74px;
+}
+/* line 684, ../scss/styles.scss */
+.list-group-item a {
+  display: block;
+  padding: 10px;
+}
+/* line 689, ../scss/styles.scss */
+.list-group-item[location="Speed Art Museum"]:before {
+  background: url("../img/speed-logo.png") no-repeat;
+}
+/* line 693, ../scss/styles.scss */
+.list-group-item[location="KMAC"]:before {
+  background: url("../img/kmac-logo.png") no-repeat;
+}
+/* line 697, ../scss/styles.scss */
+.list-group-item[location="21c Louisville"]:before {
+  background: url("../img/21clou-logo.png") no-repeat;
+}
+/* line 701, ../scss/styles.scss */
+.list-group-item[location="21c Lexington"]:before {
+  background: url("../img/21clex-logo.png") no-repeat;
+}
+/* line 705, ../scss/styles.scss */
+.list-group-item[category="Art of Ancient Cultures"] {
+  border-bottom: 8px solid #5bc0eb;
+}
+/* line 709, ../scss/styles.scss */
+.list-group-item[category="African Art"] {
+  border-bottom: 8px solid #FF6214;
+}
+/* line 713, ../scss/styles.scss */
+.list-group-item[category="Native American Art"] {
+  border-bottom: 8px solid #E0479E;
+}
+/* line 717, ../scss/styles.scss */
+.list-group-item[category="European Art, 1300-1700"] {
+  border-bottom: 8px solid #95C623;
+}
+/* line 721, ../scss/styles.scss */
+.list-group-item[category="European Art, 1700-1800"] {
+  border-bottom: 8px solid #571760;
+}
+/* line 725, ../scss/styles.scss */
+.list-group-item[category="European and American Art, 1800-1900"] {
+  border-bottom: 8px solid #FFD43A;
+}
+/* line 729, ../scss/styles.scss */
+.list-group-item[category="European and American Art, 1900-1945"] {
+  border-bottom: 8px solid #0A2472;
+}
+/* line 733, ../scss/styles.scss */
+.list-group-item[category="European and American Art, 1945-1980"] {
+  border-bottom: 8px solid #C1292E;
+}
+/* line 737, ../scss/styles.scss */
+.list-group-item[category="Dutch & Flemish Art"] {
+  border-bottom: 8px solid #BAE6FF;
+}
+/* line 741, ../scss/styles.scss */
+.list-group-item[category="Contemporary Art, 1980-Present"] {
+  border-bottom: 8px solid #B36CC9;
+}
+/* line 745, ../scss/styles.scss */
+.list-group-item[category="Art of Kentucky, 1800-1945"] {
+  border-bottom: 8px solid #8B1E3F;
+}
+/* line 749, ../scss/styles.scss */
+.list-group-item[category="Photography"] {
+  border-bottom: 8px solid #6A6262;
+}
+
+/*----------------------------------------------------------------------
+	LIGHTBOX
+----------------------------------------------------------------------*/
+/* line 761, ../scss/styles.scss */
+#hidden-content-d img {
+  max-width: calc(70% - 23px);
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+/* line 768, ../scss/styles.scss */
+#hidden-content-d div {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+}
+/* line 775, ../scss/styles.scss */
+#hidden-content-d button[data-fancybox-close] {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 4.5px 10px;
+  display: inline-block;
+  height: 35px;
+  margin-top: 2rem;
+  color: #fff;
+  background: #888;
+}

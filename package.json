@@ -1,0 +1,23 @@
+{
+  "name": "fsjs-project",
+  "version": "1.0.0",
+  "description": "KY Art Inventory CRUD Application for Code Louisville FSJS Course. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehamm01/FSJS-Project.git"
+  },
+  "author": "Rebecca Hammer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rehamm01/FSJS-Project/issues"
+  },
+  "homepage": "https://github.com/rehamm01/FSJS-Project#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}
