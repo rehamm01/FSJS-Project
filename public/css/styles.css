@@ -188,8 +188,12 @@ button {
   background: rgba(0, 0, 0, 0);
   font-family: inherit;
 }
+/* line 171, ../scss/styles.scss */
+button:focus {
+  outline: 1px dotted black;
+}
 
-/* line 172, ../scss/styles.scss */
+/* line 176, ../scss/styles.scss */
 .aria {
   display: block;
   overflow: hidden;
@@ -198,16 +202,21 @@ button {
   z-index: -1;
 }
 
-/* line 180, ../scss/styles.scss */
+/* line 184, ../scss/styles.scss */
 input {
   border: 1px solid #bfbfbf;
   border-radius: 0;
 }
 
+/* line 189, ../scss/styles.scss */
+.hidden {
+  display: none;
+}
+
 /*----------------------------------------------------------------------
 	HEADER
 ----------------------------------------------------------------------*/
-/* line 190, ../scss/styles.scss */
+/* line 198, ../scss/styles.scss */
 header {
   position: relative;
   background: url("../img/header.jpg") no-repeat;
@@ -218,14 +227,14 @@ header {
   border-bottom: 2px solid #00345B;
 }
 @media screen and (min-width: 500px) {
-  /* line 190, ../scss/styles.scss */
+  /* line 198, ../scss/styles.scss */
   header {
     padding: 0;
     height: 500px;
   }
 }
 
-/* line 206, ../scss/styles.scss */
+/* line 214, ../scss/styles.scss */
 h1 img {
   position: absolute;
   top: 50%;
@@ -234,7 +243,7 @@ h1 img {
   left: 10%;
 }
 @media screen and (min-width: 500px) {
-  /* line 206, ../scss/styles.scss */
+  /* line 214, ../scss/styles.scss */
   h1 img {
     width: 400px;
     left: calc(50% - 200px);
@@ -244,7 +253,7 @@ h1 img {
 /*----------------------------------------------------------------------
 	NAVIGATION
 ----------------------------------------------------------------------*/
-/* line 225, ../scss/styles.scss */
+/* line 233, ../scss/styles.scss */
 .header-nav {
   display: none;
   position: absolute;
@@ -256,7 +265,7 @@ h1 img {
   padding: 60px 0;
 }
 @media screen and (min-width: 900px) {
-  /* line 225, ../scss/styles.scss */
+  /* line 233, ../scss/styles.scss */
   .header-nav {
     position: fixed;
     width: 230px;
@@ -266,7 +275,7 @@ h1 img {
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
   }
 }
-/* line 244, ../scss/styles.scss */
+/* line 252, ../scss/styles.scss */
 .header-nav button {
   width: 100%;
   padding: 10px 15px 7px;
@@ -276,14 +285,15 @@ h1 img {
   font-size: 1.6rem;
   margin: 2px 0;
   line-height: 1;
+  cursor: pointer;
 }
 
-/* line 256, ../scss/styles.scss */
+/* line 265, ../scss/styles.scss */
 .close-nav {
   display: block;
 }
 
-/* line 260, ../scss/styles.scss */
+/* line 269, ../scss/styles.scss */
 .header-button {
   padding: 0;
   margin: 0;
@@ -298,12 +308,12 @@ h1 img {
   z-index: 10;
 }
 @media screen and (min-width: 900px) {
-  /* line 275, ../scss/styles.scss */
+  /* line 284, ../scss/styles.scss */
   .header-button.close-nav {
     position: fixed;
   }
 }
-/* line 282, ../scss/styles.scss */
+/* line 291, ../scss/styles.scss */
 .header-button span,
 .header-button span:before,
 .header-button span:after {
@@ -318,20 +328,20 @@ h1 img {
   -ms-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
-/* line 295, ../scss/styles.scss */
+/* line 304, ../scss/styles.scss */
 .header-button span:before {
   top: -10px;
 }
-/* line 299, ../scss/styles.scss */
+/* line 308, ../scss/styles.scss */
 .header-button span:after {
   bottom: -5px;
 }
-/* line 303, ../scss/styles.scss */
+/* line 312, ../scss/styles.scss */
 .header-button.close-nav span {
   background: transparent;
   position: relative;
 }
-/* line 307, ../scss/styles.scss */
+/* line 316, ../scss/styles.scss */
 .header-button.close-nav span:before {
   top: 0;
   -webkit-transform: rotate(45deg);
@@ -340,7 +350,7 @@ h1 img {
   transform: rotate(45deg);
   background: #00345B;
 }
-/* line 316, ../scss/styles.scss */
+/* line 325, ../scss/styles.scss */
 .header-button.close-nav span:after {
   top: -5px;
   -webkit-transform: rotate(135deg);
@@ -353,7 +363,7 @@ h1 img {
 /*----------------------------------------------------------------------
 	SEARCH
 ----------------------------------------------------------------------*/
-/* line 332, ../scss/styles.scss */
+/* line 341, ../scss/styles.scss */
 .search-button {
   position: absolute;
   top: 15px;
@@ -363,7 +373,7 @@ h1 img {
   padding: 0;
   margin: 0;
 }
-/* line 341, ../scss/styles.scss */
+/* line 350, ../scss/styles.scss */
 .search-button span {
   background: url("../img/search.svg") no-repeat;
   padding: 0;
@@ -378,13 +388,13 @@ h1 img {
   display: block;
 }
 @media screen and (min-width: 900px) {
-  /* line 357, ../scss/styles.scss */
+  /* line 366, ../scss/styles.scss */
   .search-button.close-search {
     position: fixed;
     z-index: 10;
   }
 }
-/* line 363, ../scss/styles.scss */
+/* line 372, ../scss/styles.scss */
 .search-button.close-search span {
   width: 28px;
   height: 5px;
@@ -399,7 +409,7 @@ h1 img {
   background: transparent;
   position: relative;
 }
-/* line 377, ../scss/styles.scss */
+/* line 386, ../scss/styles.scss */
 .search-button.close-search span:before {
   width: 28px;
   height: 5px;
@@ -413,7 +423,7 @@ h1 img {
   transform: rotate(45deg);
   background: #00345B;
 }
-/* line 391, ../scss/styles.scss */
+/* line 400, ../scss/styles.scss */
 .search-button.close-search span:after {
   width: 28px;
   height: 5px;
@@ -428,7 +438,7 @@ h1 img {
   background: #00345B;
 }
 
-/* line 407, ../scss/styles.scss */
+/* line 416, ../scss/styles.scss */
 .search-container {
   display: none;
   position: absolute;
@@ -439,7 +449,7 @@ h1 img {
   padding: 60px 0;
 }
 @media screen and (min-width: 900px) {
-  /* line 407, ../scss/styles.scss */
+  /* line 416, ../scss/styles.scss */
   .search-container {
     position: fixed;
     right: 0;
@@ -450,7 +460,17 @@ h1 img {
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
   }
 }
-/* line 426, ../scss/styles.scss */
+/* line 435, ../scss/styles.scss */
+.search-container form {
+  padding: 10px;
+}
+/* line 439, ../scss/styles.scss */
+.search-container label {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+/* line 445, ../scss/styles.scss */
 .search-container input[type="button"] {
   border: 0;
   background: #00345B;
@@ -459,77 +479,81 @@ h1 img {
   background-repeat: no-repeat;
   display: inline-block;
   width: 35px;
+  height: 35px;
   background-position: 3px;
 }
-/* line 437, ../scss/styles.scss */
+/* line 457, ../scss/styles.scss */
 .search-container input[type="text"] {
   display: inline-block;
-  width: calc(100% - 39px);
+  height: 36px;
+  margin-right: 5px;
+  vertical-align: top;
+  width: calc(100% - 43px);
 }
 
 /*----------------------------------------------------------------------
 	ART CATEGORIES
 ----------------------------------------------------------------------*/
-/* line 448, ../scss/styles.scss */
+/* line 471, ../scss/styles.scss */
 .ancient {
   background-color: #5bc0eb;
 }
 
-/* line 452, ../scss/styles.scss */
+/* line 475, ../scss/styles.scss */
 .african {
   background-color: #FF6214;
 }
 
-/* line 456, ../scss/styles.scss */
+/* line 479, ../scss/styles.scss */
 .native-american {
   background-color: #E0479E;
 }
 
-/* line 460, ../scss/styles.scss */
+/* line 483, ../scss/styles.scss */
 .euro1 {
   background-color: #95C623;
 }
 
-/* line 464, ../scss/styles.scss */
+/* line 487, ../scss/styles.scss */
 .euro2 {
   background-color: #571760;
   color: #fff;
 }
 
-/* line 469, ../scss/styles.scss */
+/* line 492, ../scss/styles.scss */
 .euro3 {
   background-color: #FFD43A;
 }
 
-/* line 473, ../scss/styles.scss */
+/* line 496, ../scss/styles.scss */
 .euro4 {
   background-color: #0A2472;
   color: #fff;
 }
 
-/* line 478, ../scss/styles.scss */
+/* line 501, ../scss/styles.scss */
 .euro5 {
   background-color: #C1292E;
   color: #fff;
 }
 
-/* line 483, ../scss/styles.scss */
+/* line 506, ../scss/styles.scss */
 .dutch {
   background-color: #BAE6FF;
 }
 
-/* line 487, ../scss/styles.scss */
+/* line 510, ../scss/styles.scss */
 .contemporary {
   background-color: #B36CC9;
 }
 
-/* line 491, ../scss/styles.scss */
+/* line 514, ../scss/styles.scss */
 .kentucky {
   background-color: #8B1E3F;
   color: #fff;
 }
 
-/* line 496, ../scss/styles.scss */
+/* line 519, ../scss/styles.scss */
 .photography {
   background-color: #6A6262;
   color: #fff;
@@ -538,7 +562,7 @@ h1 img {
 /*----------------------------------------------------------------------
 	FORM
 ----------------------------------------------------------------------*/
-/* line 506, ../scss/styles.scss */
+/* line 529, ../scss/styles.scss */
 #form-container {
   background: #eaf5fc;
   margin-bottom: 5rem;
@@ -546,35 +570,34 @@ h1 img {
   -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
 }
-
-/* line 514, ../scss/styles.scss */
-form {
+/* line 536, ../scss/styles.scss */
+#form-container form {
   line-height: 1;
   font-size: 1.6rem;
   padding: 20px 10px;
 }
 @media screen and (min-width: 450px) {
-  /* line 514, ../scss/styles.scss */
-  form {
+  /* line 536, ../scss/styles.scss */
+  #form-container form {
     padding-bottom: 35px;
   }
 }
 @media screen and (min-width: 1000px) {
-  /* line 514, ../scss/styles.scss */
-  form {
+  /* line 536, ../scss/styles.scss */
+  #form-container form {
     padding: 20px 20px 35px;
   }
 }
-/* line 528, ../scss/styles.scss */
-form label {
+/* line 550, ../scss/styles.scss */
+#form-container form label {
   display: block;
   text-transform: uppercase;
   font-weight: 700;
   margin: 15px 0 3px;
   border: 0;
 }
-/* line 536, ../scss/styles.scss */
-form button {
+/* line 558, ../scss/styles.scss */
+#form-container form button {
   font-size: 1.6rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -590,77 +613,76 @@ form button {
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 @media screen and (min-width: 500px) and (max-width: 999px) {
-  /* line 536, ../scss/styles.scss */
-  form button {
+  /* line 558, ../scss/styles.scss */
+  #form-container form button {
     background-position: center -168px;
   }
 }
 @media screen and (min-width: 1000px) {
-  /* line 536, ../scss/styles.scss */
-  form button {
+  /* line 558, ../scss/styles.scss */
+  #form-container form button {
     display: inline-block;
     width: 13.6%;
   }
 }
 @media screen and (min-width: 1400px) {
-  /* line 536, ../scss/styles.scss */
-  form button {
+  /* line 558, ../scss/styles.scss */
+  #form-container form button {
     width: 14.3%;
     background-size: 200%;
   }
 }
-/* line 567, ../scss/styles.scss */
-form input,
-form select {
+/* line 589, ../scss/styles.scss */
+#form-container form input,
+#form-container form select {
   width: 100%;
   padding: 0 10px;
   height: 35px;
 }
-/* line 576, ../scss/styles.scss */
-form .form-group:first-of-type label {
+/* line 598, ../scss/styles.scss */
+#form-container form .form-group:first-of-type label {
   margin-top: 0;
 }
 @media screen and (min-width: 450px) {
-  /* line 573, ../scss/styles.scss */
-  form .form-group {
+  /* line 595, ../scss/styles.scss */
+  #form-container form .form-group {
     display: inline-block;
     width: 49%;
   }
-  /* line 585, ../scss/styles.scss */
-  form .form-group:nth-of-type(odd) {
+  /* line 607, ../scss/styles.scss */
+  #form-container form .form-group:nth-of-type(odd) {
     margin-right: 1%;
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 573, ../scss/styles.scss */
-  form .form-group {
+  /* line 595, ../scss/styles.scss */
+  #form-container form .form-group {
     width: 31.9%;
   }
-  /* line 596, ../scss/styles.scss */
-  form .form-group:nth-of-type(1), form .form-group:nth-of-type(2), form .form-group:nth-of-type(4), form .form-group:nth-of-type(5) {
+  /* line 618, ../scss/styles.scss */
+  #form-container form .form-group:nth-of-type(1), #form-container form .form-group:nth-of-type(2), #form-container form .form-group:nth-of-type(4), #form-container form .form-group:nth-of-type(5) {
     margin-right: 1%;
   }
 }
 @media screen and (min-width: 800px) {
-  /* line 573, ../scss/styles.scss */
-  form .form-group {
+  /* line 595, ../scss/styles.scss */
+  #form-container form .form-group {
     width: 15.4%;
   }
-  /* line 604, ../scss/styles.scss */
-  form .form-group:not(:last-of-type) {
+  /* line 626, ../scss/styles.scss */
+  #form-container form .form-group:not(:last-of-type) {
     margin-right: 1%;
   }
 }
 @media screen and (min-width: 1000px) {
-  /* line 573, ../scss/styles.scss */
-  form .form-group {
+  /* line 595, ../scss/styles.scss */
+  #form-container form .form-group {
     width: 13%;
     margin-right: 1%;
   }
 }
-
-/* line 617, ../scss/styles.scss */
-.greeting {
+/* line 639, ../scss/styles.scss */
+#form-container .greeting {
   padding: 20px 10px 0;
   font-size: 1.8rem;
   text-align: center;
@@ -669,8 +691,8 @@ form .form-group:first-of-type label {
   margin: 0 auto 1rem;
 }
 @media screen and (min-width: 800px) {
-  /* line 617, ../scss/styles.scss */
-  .greeting {
+  /* line 639, ../scss/styles.scss */
+  #form-container .greeting {
     padding: 40px 20px 15px;
     font-size: 2.2rem;
     line-height: 37px;
@@ -680,13 +702,13 @@ form .form-group:first-of-type label {
 /*----------------------------------------------------------------------
 	ENTRIES
 ----------------------------------------------------------------------*/
-/* line 637, ../scss/styles.scss */
+/* line 660, ../scss/styles.scss */
 #list-container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* line 642, ../scss/styles.scss */
+/* line 665, ../scss/styles.scss */
 .list-group-item {
   -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
@@ -696,7 +718,7 @@ form .form-group:first-of-type label {
   background: #fff;
 }
 @media screen and (min-width: 550px) {
-  /* line 642, ../scss/styles.scss */
+  /* line 665, ../scss/styles.scss */
   .list-group-item {
     width: calc(50% - 22px);
     display: inline-block;
@@ -704,18 +726,18 @@ form .form-group:first-of-type label {
   }
 }
 @media screen and (min-width: 700px) {
-  /* line 642, ../scss/styles.scss */
+  /* line 665, ../scss/styles.scss */
   .list-group-item {
     width: calc(33% - 22px);
   }
 }
 @media screen and (min-width: 900px) {
-  /* line 642, ../scss/styles.scss */
+  /* line 665, ../scss/styles.scss */
   .list-group-item {
     width: calc(25% - 22px);
   }
 }
-/* line 665, ../scss/styles.scss */
+/* line 688, ../scss/styles.scss */
 .list-group-item:focus, .list-group-item:hover {
   background: -moz-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(20%, white), color-stop(100%, #eaf5fc));
@@ -724,7 +746,7 @@ form .form-group:first-of-type label {
   background: -ms-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
   background: linear-gradient(to bottom, #ffffff 0%, #ffffff 20%, #eaf5fc 100%);
 }
-/* line 674, ../scss/styles.scss */
+/* line 697, ../scss/styles.scss */
 .list-group-item:before {
   content: "";
   display: block;
@@ -734,102 +756,208 @@ form .form-group:first-of-type label {
   width: 74px;
   height: 74px;
 }
-/* line 684, ../scss/styles.scss */
+/* line 707, ../scss/styles.scss */
 .list-group-item a {
   display: block;
   padding: 10px;
 }
-/* line 689, ../scss/styles.scss */
+/* line 712, ../scss/styles.scss */
 .list-group-item[location="Speed Art Museum"]:before {
   background: url("../img/speed-logo.png") no-repeat;
 }
-/* line 693, ../scss/styles.scss */
+/* line 716, ../scss/styles.scss */
 .list-group-item[location="KMAC"]:before {
   background: url("../img/kmac-logo.png") no-repeat;
 }
-/* line 697, ../scss/styles.scss */
+/* line 720, ../scss/styles.scss */
 .list-group-item[location="21c Louisville"]:before {
   background: url("../img/21clou-logo.png") no-repeat;
 }
-/* line 701, ../scss/styles.scss */
+/* line 724, ../scss/styles.scss */
 .list-group-item[location="21c Lexington"]:before {
   background: url("../img/21clex-logo.png") no-repeat;
 }
-/* line 705, ../scss/styles.scss */
+/* line 728, ../scss/styles.scss */
 .list-group-item[category="Art of Ancient Cultures"] {
   border-bottom: 8px solid #5bc0eb;
 }
-/* line 709, ../scss/styles.scss */
+/* line 732, ../scss/styles.scss */
 .list-group-item[category="African Art"] {
   border-bottom: 8px solid #FF6214;
 }
-/* line 713, ../scss/styles.scss */
+/* line 736, ../scss/styles.scss */
 .list-group-item[category="Native American Art"] {
   border-bottom: 8px solid #E0479E;
 }
-/* line 717, ../scss/styles.scss */
+/* line 740, ../scss/styles.scss */
 .list-group-item[category="European Art, 1300-1700"] {
   border-bottom: 8px solid #95C623;
 }
-/* line 721, ../scss/styles.scss */
+/* line 744, ../scss/styles.scss */
 .list-group-item[category="European Art, 1700-1800"] {
   border-bottom: 8px solid #571760;
 }
-/* line 725, ../scss/styles.scss */
+/* line 748, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1800-1900"] {
   border-bottom: 8px solid #FFD43A;
 }
-/* line 729, ../scss/styles.scss */
+/* line 752, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1900-1945"] {
   border-bottom: 8px solid #0A2472;
 }
-/* line 733, ../scss/styles.scss */
+/* line 756, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1945-1980"] {
   border-bottom: 8px solid #C1292E;
 }
-/* line 737, ../scss/styles.scss */
+/* line 760, ../scss/styles.scss */
 .list-group-item[category="Dutch & Flemish Art"] {
   border-bottom: 8px solid #BAE6FF;
 }
-/* line 741, ../scss/styles.scss */
+/* line 764, ../scss/styles.scss */
 .list-group-item[category="Contemporary Art, 1980-Present"] {
   border-bottom: 8px solid #B36CC9;
 }
-/* line 745, ../scss/styles.scss */
+/* line 768, ../scss/styles.scss */
 .list-group-item[category="Art of Kentucky, 1800-1945"] {
   border-bottom: 8px solid #8B1E3F;
 }
-/* line 749, ../scss/styles.scss */
+/* line 772, ../scss/styles.scss */
 .list-group-item[category="Photography"] {
   border-bottom: 8px solid #6A6262;
 }
 
 /*----------------------------------------------------------------------
-	LIGHTBOX
+	DETAILS PAGES
 ----------------------------------------------------------------------*/
-/* line 761, ../scss/styles.scss */
-#hidden-content-d img {
-  max-width: calc(70% - 23px);
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 20px;
+/* line 782, ../scss/styles.scss */
+.background {
+  position: absolute;
+  top: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
 }
-/* line 768, ../scss/styles.scss */
-#hidden-content-d div {
-  width: 30%;
-  display: inline-block;
-  vertical-align: top;
+
+/* line 791, ../scss/styles.scss */
+#details {
+  background: #fff;
+  padding: 10px;
+  height: 100%;
+  overflow: scroll;
+}
+/* line 797, ../scss/styles.scss */
+#details img {
+  height: 100%;
+  width: auto;
+}
+@media screen and (min-width: 800px) {
+  /* line 797, ../scss/styles.scss */
+  #details img {
+    max-width: calc(70% - 23px);
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+  }
+}
+/* line 809, ../scss/styles.scss */
+#details div {
   margin-top: 10px;
+  position: relative;
 }
-/* line 775, ../scss/styles.scss */
-#hidden-content-d button[data-fancybox-close] {
+@media screen and (min-width: 800px) {
+  /* line 809, ../scss/styles.scss */
+  #details div {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+/* line 820, ../scss/styles.scss */
+#details div.hidden {
+  display: none;
+}
+/* line 824, ../scss/styles.scss */
+#details div#edit-form-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  margin-top: 0;
+}
+/* line 838, ../scss/styles.scss */
+#details .close-button,
+#details .submit-button,
+#details .edit-button,
+#details .cancel-button,
+#details .delete-button,
+#details #imageUpload {
   font-size: 1.6rem;
   font-weight: 900;
   text-transform: uppercase;
   padding: 4.5px 10px;
   display: inline-block;
   height: 35px;
-  margin-top: 2rem;
+  margin: 0 1rem 2rem 0;
   color: #fff;
+  background: #00345B;
+}
+/* line 849, ../scss/styles.scss */
+#details .close-button:focus,
+#details .submit-button:focus,
+#details .edit-button:focus,
+#details .cancel-button:focus,
+#details .delete-button:focus,
+#details #imageUpload:focus {
+  outline: 0;
+}
+/* line 855, ../scss/styles.scss */
+#details .close-button,
+#details .cancel-button {
   background: #888;
+}
+/* line 859, ../scss/styles.scss */
+#details #imageUpload {
+  margin-top: 0;
+}
+/* line 863, ../scss/styles.scss */
+#details #button_container {
+  width: initial;
+}
+
+/* line 871, ../scss/styles.scss */
+#edit-form-container label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+/* line 879, ../scss/styles.scss */
+#edit-form-container .form-group {
+  display: block;
+  width: 100%;
+}
+/* line 883, ../scss/styles.scss */
+#edit-form-container .form-group:first-of-type {
+  margin-top: 0;
+}
+/* line 889, ../scss/styles.scss */
+#edit-form-container input,
+#edit-form-container select {
+  width: 100%;
+  height: 20px;
+  padding: 0 5px;
+}
+/* line 897, ../scss/styles.scss */
+#edit-form-container .submit-button,
+#edit-form-container .cancel-button,
+#edit-form-container .delete-button {
+  margin: 2rem 1rem 0 0;
+}
+/* line 901, ../scss/styles.scss */
+#edit-form-container .delete-button {
+  background: #8B1E3F;
+  margin-bottom: 20px;
 }

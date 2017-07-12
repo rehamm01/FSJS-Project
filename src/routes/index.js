@@ -1,5 +1,6 @@
 // src/routes/index.js
 
+const mongoose = require('mongoose');
 const router = require('express').Router();
 
 const FILES = [
@@ -13,36 +14,148 @@ const FILES = [
 ];
 
 router.use('/doc', function(req, res, next) {
-  res.end(`Documentation http://expressjs.com/`);
+  mongoose.model('File').find({}, function(err, files) {
+    if (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+
+    res.json(files);
+  });
 });
+
 
 router.get('/file', function(req, res, next) {
-  res.json(FILES);
+
+  const deleted = (req.query.deleted === 'Y') ? true : {$ne: true};
+  const term = req.query.q || null;
+  const query = {
+    deleted: deleted,
+  };
+
+  if (term) {
+    query.$or = [
+      { title: new RegExp(term, 'ig'), },
+      { artist: new RegExp(term, 'ig'), },
+      { icon: new RegExp(term, 'ig'), },
+      { year: new RegExp(term, 'ig'), },
+      { media: new RegExp(term, 'ig'), },
+      { category: new RegExp(term, 'ig'), },
+      { museum: new RegExp(term, 'ig'), },
+    ];
+  }
+
+  mongoose.model('File').find(query, function(err, files) {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+
+    res.json(files);
+  });
 });
 
-router.post('/file', function(req, res, next) {
-  const newId = '' + FILES.length;
-  const data = req.body;
-  data.id = newId;
 
-  FILES.push(data);
-  res.status(201).json(data);
+// router.get('/file', function(req, res, next) {
+//   mongoose.model('File').find({deleted: {$ne: true}}, function(err, files) {
+//     if (err) {
+//       console.log(err);
+//       return res.status(500).json(err);
+//     }
+
+//     res.json(files);
+//   });
+// });
+
+
+router.post('/file', function(req, res, next) {
+  const File = mongoose.model('File');
+  const fileData = {
+    title: req.body.title,
+    artist: req.body.artist,
+    icon: req.body.icon,
+    year: req.body.year,
+    media: req.body.media,
+    category: req.body.category,
+    museum: req.body.museum,
+  };
+
+  File.create(fileData, function(err, newFile) {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+
+    res.json(newFile);
+  });
 });
 
 router.put('/file/:fileId', function(req, res, next) {
-  const {fileId} = req.params;
-  const file = FILES.find(entry => entry.id === fileId);
-  if (!file) {
-    return res.status(404).end(`Could not find file '${fileId}'`);
-  }
+  const File = mongoose.model('File');
+  const fileId = req.params.fileId;
 
-  file.title = req.body.title;
-  file.artist = req.body.artist;
-  res.json(file);
-});
+  if(File && File._fileId !== fileId) {
+    return res.status(500).json({err: "Ids don't match!"})
+  }
+  File.findByIdAndUpdate(fileId, File, {new: true}, function(err, File) {
+    if(err) {
+      return res.status(500).json({err: err.message});
+    }
+    res.json({'File': File, message: 'File updated.'});
+  })
+}); 
+
+
+// router.put('/file/:fileId', function(req, res, next) {
+// const File = mongoose.model('File');
+// const fileId = req.params.fileId;
+
+//   File.findById(fileId, function(err, file) {
+//     if (err) {
+//       console.log(err);
+//       return res.status(500).json(err);
+//     }
+//     if (!file) {
+//       return res.status(404).json({message: "File not found"});
+//     }
+
+//     file.title = req.body.title;
+//     file.artist = req.body.artist;
+//     file.icon = req.body.icon;
+//     file.year = req.body.year;
+//     file.media = req.body.media;
+//     file.category = req.body.category;
+//     file.museum = req.body.museum;
+
+//     file.save(function(err, savedFile) {
+//       res.json(savedFile);
+//     })
+
+//   })
+// });
+
+
 
 router.delete('/file/:fileId', function(req, res, next) {
-  res.end(`Deleting file '${req.params.fileId}'`);
+  const File = mongoose.model('File');
+  const fileId = req.params.fileId;
+
+  File.findById(fileId, function(err, file) {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+    if (!file) {
+      return res.status(404).json({message: "File not found"});
+    }
+
+    file.deleted = true;
+
+    file.save(function(err, doomedFile) {
+      res.json(doomedFile);
+    })
+
+  })
 });
 
 router.get('/file/:fileId', function(req, res, next) {

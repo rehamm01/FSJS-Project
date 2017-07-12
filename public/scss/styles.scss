@@ -167,6 +167,10 @@ button {
     border: 0;
     background: rgba(0,0,0,0);
     font-family: inherit;
+
+    &:focus {
+    	outline: 1px dotted black;
+    }
 }
 
 .aria {
@@ -180,6 +184,10 @@ button {
 input {
 	border: 1px solid #bfbfbf;
 	border-radius: 0;
+}
+
+.hidden {
+	display: none;
 }
 
 
@@ -250,6 +258,7 @@ h1 {
 		font-size: 1.6rem;
 		margin: 2px 0;
 		line-height: 1;
+		cursor: pointer;
     }
 }
 
@@ -423,6 +432,16 @@ h1 {
 			box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
     	}
 
+    form {
+    	padding: 10px;
+    }
+
+    label {
+	    text-transform: uppercase;
+	    font-size: 1.6rem;
+	    font-weight: bold;
+	}
+
     input[type="button"] {
 	    border: 0;
 	    background: #00345B;
@@ -431,12 +450,16 @@ h1 {
 	    background-repeat: no-repeat;
 	    display: inline-block;
 	    width: 35px;
+	    height: 35px;
 	    background-position: 3px;
 	}
 
 	input[type="text"] {
 		display: inline-block;
-		width: calc(100% - 39px);
+		height: 36px;
+	    margin-right: 5px;
+	    vertical-align: top;
+	    width: calc(100% - 43px);
 	}
 }
 
@@ -509,124 +532,124 @@ h1 {
     -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
-}
 
-form {
-    line-height: 1;
-    font-size: 1.6rem;
-    padding: 20px 10px;
-
-    		@media screen and (min-width: 450px) {
-    			padding-bottom: 35px;
-    		}
-
-    		@media screen and (min-width: 1000px) {
-    			padding: 20px 20px 35px;
-    		}
-
-
-    label {
-	    display: block;
-	    text-transform: uppercase;
-	    font-weight: 700;
-	    margin: 15px 0 3px;
-	    border: 0;
-	}
-
-	button {
+	form {
+	    line-height: 1;
 	    font-size: 1.6rem;
-	    font-weight: 900;
-	    text-transform: uppercase;
-	    padding: 4.5px;
-	    display: block;
-	    width: 100%;
-	    height: 35px;
-	    margin-top: 2rem;
-	    color: #fff;
-	    background: url(../img/header.jpg) no-repeat;
-	    background-size: cover;
-	    background-position: center -98px;
-	    text-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+	    padding: 20px 10px;
 
-			    @media screen and (min-width: 500px) and (max-width: 999px) {
-			    	background-position: center -168px;
-			    }
+	    		@media screen and (min-width: 450px) {
+	    			padding-bottom: 35px;
+	    		}
 
-			    @media screen and (min-width: 1000px) {
-			    	display: inline-block;
-					width: 13.6%;
-			    }
+	    		@media screen and (min-width: 1000px) {
+	    			padding: 20px 20px 35px;
+	    		}
 
-			    @media screen and (min-width: 1400px) {
-					width: 14.3%;
-			   		background-size: 200%;
-				}
-	}
 
-	input, 
-	select {
-	    width: 100%;
-	    padding: 0 10px;
-	    height: 35px;
-	}
-
-	.form-group {
-
-		&:first-of-type {
-			label {
-			    margin-top: 0;
-			}
+	    label {
+		    display: block;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    margin: 15px 0 3px;
+		    border: 0;
 		}
 
-				@media screen and (min-width: 450px) {
-					display: inline-block;
-		    		width: 49%;
+		button {
+		    font-size: 1.6rem;
+		    font-weight: 900;
+		    text-transform: uppercase;
+		    padding: 4.5px;
+		    display: block;
+		    width: 100%;
+		    height: 35px;
+		    margin-top: 2rem;
+		    color: #fff;
+		    background: url(../img/header.jpg) no-repeat;
+		    background-size: cover;
+		    background-position: center -98px;
+		    text-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
 
-		    		&:nth-of-type(odd) {
-					    margin-right: 1%;
+				    @media screen and (min-width: 500px) and (max-width: 999px) {
+				    	background-position: center -168px;
+				    }
+
+				    @media screen and (min-width: 1000px) {
+				    	display: inline-block;
+						width: 13.6%;
+				    }
+
+				    @media screen and (min-width: 1400px) {
+						width: 14.3%;
+				   		background-size: 200%;
 					}
+		}
+
+		input, 
+		select {
+		    width: 100%;
+		    padding: 0 10px;
+		    height: 35px;
+		}
+
+		.form-group {
+
+			&:first-of-type {
+				label {
+				    margin-top: 0;
 				}
+			}
 
-				@media screen and (min-width: 600px) {
-					width: 31.9%;
+					@media screen and (min-width: 450px) {
+						display: inline-block;
+			    		width: 49%;
 
-					&:nth-of-type(1),
-					&:nth-of-type(2),
-					&:nth-of-type(4),
-					&:nth-of-type(5) {
+			    		&:nth-of-type(odd) {
+						    margin-right: 1%;
+						}
+					}
+
+					@media screen and (min-width: 600px) {
+						width: 31.9%;
+
+						&:nth-of-type(1),
+						&:nth-of-type(2),
+						&:nth-of-type(4),
+						&:nth-of-type(5) {
+							margin-right: 1%;
+						}
+					}
+
+					@media screen and (min-width: 800px) {
+						width: 15.4%;
+
+						&:not(:last-of-type) {
+							margin-right: 1%;
+						}
+					}
+
+					@media screen and (min-width: 1000px) {
+						width: 13%;
 						margin-right: 1%;
 					}
-				}
+		}
 
-				@media screen and (min-width: 800px) {
-					width: 15.4%;
-
-					&:not(:last-of-type) {
-						margin-right: 1%;
-					}
-				}
-
-				@media screen and (min-width: 1000px) {
-					width: 13%;
-					margin-right: 1%;
-				}
 	}
 
-}
+	.greeting {
+	    padding: 20px 10px 0;
+	    font-size: 1.8rem;
+	    text-align: center;
+	    line-height: 30px;
+	    max-width: 1000px;
+	    margin: 0 auto 1rem;
 
-.greeting {
-    padding: 20px 10px 0;
-    font-size: 1.8rem;
-    text-align: center;
-    line-height: 30px;
-    max-width: 1000px;
-    margin: 0 auto 1rem;
-
-    @media screen and (min-width: 800px) {
-		padding: 40px 20px 15px;
-		font-size: 2.2rem;
-		line-height: 37px;
-    }
+	    @media screen and (min-width: 800px) {
+			padding: 40px 20px 15px;
+			font-size: 2.2rem;
+			line-height: 37px;
+	    }
+	}
 }
 
 
@@ -753,37 +776,134 @@ form {
 
 
 /*----------------------------------------------------------------------
-	LIGHTBOX
+	DETAILS PAGES
 ----------------------------------------------------------------------*/
 
-#hidden-content-d {
+.background {
+    position: absolute;
+    top: 0;
+    padding: 20px;
+    background: rgba(0,0,0,.65);
+    width: 100%;
+    height: 100%;
+}
+
+#details {
+	background: #fff;
+    padding: 10px;
+    height: 100%;
+    overflow: scroll;
 
 	img {
-		max-width: calc(70% - 23px);
-		display: inline-block;
-		vertical-align: top;
-		margin-right: 20px;
+		height: 100%;
+		width: auto;
+		
+		@media screen and (min-width: 800px) {
+			max-width: calc(70% - 23px);
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 20px;
+		}
 	}
 
 	div {
-		width: 30%;
-		display: inline-block;
-		vertical-align: top;
 		margin-top: 10px;
+		position: relative;
+		
+		@media screen and (min-width: 800px) {
+			width: 30%;
+			display: inline-block;
+			vertical-align: top;
+		}
 	}
 
-	button[data-fancybox-close] {
+	div.hidden {
+		display: none;
+	}
+
+	div#edit-form-container {
+	    position: absolute;
+	    width: 100%;
+	    top: 0;
+	    height: 100%;
+	    background: #fff;
+	    margin-top: 0;
+	}
+
+	.close-button,
+	.submit-button,
+	.edit-button,
+	.cancel-button,
+	.delete-button,
+	#imageUpload {
 		font-size: 1.6rem;
 	    font-weight: 900;
 	    text-transform: uppercase;
 	    padding: 4.5px 10px;
 	    display: inline-block;
 	    height: 35px;
-	    margin-top: 2rem;
+	    margin: 0 1rem 2rem 0;
 	    color: #fff;
-	    background: #888;
+	    background: #00345B;
+
+	    &:focus {
+	    	outline: 0;
+	    }
+	}
+
+	.close-button,
+	.cancel-button {
+		background: #888; 
+	}
+
+	#imageUpload {
+		margin-top: 0;
+	}
+
+	#button_container {
+		width: initial;
 	}
 }
+
+
+#edit-form-container {
+
+	label {
+    	display: block;
+    	text-transform: uppercase;
+    	font-weight: 900;
+    	font-size: 1.4rem;
+    	line-height: 1;
+	}
+
+	.form-group {
+	    display: block;
+	    width: 100%;
+
+	    &:first-of-type {
+		    margin-top: 0;
+		}
+	}
+
+	input,
+	select {
+		width: 100%;
+		height: 20px;
+		padding: 0 5px;
+	}
+
+	.submit-button,
+	.cancel-button,
+	.delete-button {
+		margin: 2rem 1rem 0 0;
+	}
+
+	.delete-button {
+		background: #8B1E3F;
+		margin-bottom: 20px;
+	}
+}
+
 
 
 

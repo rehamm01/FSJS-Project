@@ -4,14 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>KY Art Inventory</title>
-
-		<!--- Eventually replace with my own CSS -->		
-		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  -->
 		
 		<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700,800" rel="stylesheet">
 		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox.min.css">
-
 	</head>
 
 	<body>
@@ -79,7 +74,7 @@
 					</div>
 					<div class="form-group">
 						<label for="file-category">Category</label>
-						<select name="Category">
+						<select name="Category" class="form-control" id="file-category">
 						  <option value="Art of Ancient Cultures">Art of Ancient Cultures</option>
 						  <option value="African Art">African Art</option>
 						  <option value="Native American Art">Native American Art</option>
@@ -96,7 +91,7 @@
 					</div>
 					<div class="form-group">
 						<label for="file-museum">Museum</label>
-						<select name="Museum">
+						<select name="Museum" class="form-control" id="file-museum">
 							<option value="Speed Art Museum"> Speed Art Museum</option>
 							<option value="21c Louisville"> 21c Louisville</option>
 							<option value="21c Lexington"> 21c Lexington</option>
@@ -108,35 +103,24 @@
 			</div>
 
 			<div id="list-container"></div>
+
 		</main>
 
 		<script id="list-template" type="text/x-handlebars-template">
 			<ul class="list-group">
 				{{#each files}}
-					<li id="{{id}}" class="list-group-item" location="{{museum}}" category="{{category}}">
-						<a data-fancybox data-options='{"src": "#hidden-content-d", "modal": true}' href="javascript:;">
-							<img src="../img/{{icon}}-400.jpg">
+					<li id="{{_id}}" class="list-group-item" location="{{museum}}" category="{{category}}">
+						<a href="/entry/{{_id}}">
+							<img src="../img/placeholder.svg">
 							<h3>{{title}}</h3>
 							<h4>{{artist}}</h4>
+
+							<p>{{category}}</p>
+							<p>{{museum}}</p>
 						</a>
 					</li>
 				{{/each}}
 			</ul>
-
-			<div style="display: none; width:80%; max-height: calc(100vh - 88px);" id="hidden-content-d">
-			{{#each files}}
-				<img src="../img/{{icon}}.jpg">
-				<div>
-					<h3>{{title}}</h3>
-					<h4>{{artist}}</h4>
-					<p>{{year}}</p>
-					<p>{{media}}</p>
-					<p>{{category}}</p>
-					<p>{{museum}}</p>
-					<button data-fancybox-close>Cancel</button>
-				</div>
-			{{/each}}
-			</div>
 		</script>
 
 
@@ -145,7 +129,6 @@
 
 		<script src="/js/app.js"></script>
 		<script src="/js/front-end.js"></script>
-		<script src="/js/fancybox/jquery.fancybox.min.js"></script>
 
 		<script>
 			$(document).ready(function() {
@@ -158,8 +141,10 @@
 				});
 
 				refreshFileList();
-
 		</script>
+
+		
+	
 
 	</body>
 

@@ -18,6 +18,8 @@
   "homepage": "https://github.com/rehamm01/FSJS-Project#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.11.1"
   }
 }
