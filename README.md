@@ -13,3 +13,4 @@ Current Objectives:
 Future Objectives:
 1.	Have Nav links sort Items by Category
 2.	Have Search Bar in Nav return results
+ 
