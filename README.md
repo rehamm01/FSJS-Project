@@ -1,9 +1,14 @@
-# FSJS-Project
-Code Louisville Full Stack JavaScript Project: KY Art Inventory
+Code Louisville FSJS Project:
+# KY Art Inventory
+
+Progress:
+1. Removed Lightbox and moved each Artwork Entry to their own page based on unique ID number.
+2. Fixed problem with Select Inputs not registering selection.
 
 Current Objectives:
-1.	Get each artwork to show up individually in Lightbox
-2.	Give user ability to upload image in Add Form
-3.	Give user ability to Edit inside Lightbox
-4.	Have Nav links sort Items by Category
-5.	Have Search Bar in Nav return results
+1.	Get Edit Button to work on 
+2.	Give user ability to upload image in Edit Form and have them save to both Large and Thumbnail locations.
+
+Future Objectives:
+1.	Have Nav links sort Items by Category
+2.	Have Search Bar in Nav return results

@@ -68,3 +68,5 @@ fastlane/test_output
 
 .sass-cache/
 node_modules/
+.DS_Store
+public/js/.DS_Store
