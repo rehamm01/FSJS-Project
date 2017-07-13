@@ -90,6 +90,8 @@ router.post('/file', function(req, res, next) {
   });
 });
 
+
+// new version based on Treehouse makes Homepage version
 router.put('/file/:fileId', function(req, res, next) {
   const File = mongoose.model('File');
   const fileId = req.params.fileId;

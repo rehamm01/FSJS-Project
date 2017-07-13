@@ -833,51 +833,49 @@ h1 img {
 .background {
   position: absolute;
   top: 0;
-  padding: 20px;
+  padding: 40px;
   background: rgba(0, 0, 0, 0.65);
   width: 100%;
-  height: 100%;
+  height: 1000%;
 }
 
 /* line 791, ../scss/styles.scss */
 #details {
   background: #fff;
   padding: 10px;
-  height: 100%;
-  overflow: scroll;
-}
-/* line 797, ../scss/styles.scss */
-#details img {
-  height: 100%;
-  width: auto;
+  height: auto;
+  overflow: auto;
 }
 @media screen and (min-width: 800px) {
   /* line 797, ../scss/styles.scss */
   #details img {
     max-width: calc(70% - 23px);
+    max-height: calc(100vh - 100px);
     display: inline-block;
     vertical-align: top;
     margin-right: 20px;
+    height: auto;
+    width: auto;
   }
 }
-/* line 809, ../scss/styles.scss */
+/* line 810, ../scss/styles.scss */
 #details div {
   margin-top: 10px;
   position: relative;
 }
 @media screen and (min-width: 800px) {
-  /* line 809, ../scss/styles.scss */
+  /* line 810, ../scss/styles.scss */
   #details div {
     width: 30%;
     display: inline-block;
     vertical-align: top;
   }
 }
-/* line 820, ../scss/styles.scss */
+/* line 821, ../scss/styles.scss */
 #details div.hidden {
   display: none;
 }
-/* line 824, ../scss/styles.scss */
+/* line 825, ../scss/styles.scss */
 #details div#edit-form-container {
   position: absolute;
   width: 100%;
@@ -886,7 +884,7 @@ h1 img {
   background: #fff;
   margin-top: 0;
 }
-/* line 838, ../scss/styles.scss */
+/* line 839, ../scss/styles.scss */
 #details .close-button,
 #details .submit-button,
 #details .edit-button,
@@ -903,7 +901,7 @@ h1 img {
   color: #fff;
   background: #00345B;
 }
-/* line 849, ../scss/styles.scss */
+/* line 850, ../scss/styles.scss */
 #details .close-button:focus,
 #details .submit-button:focus,
 #details .edit-button:focus,
@@ -912,21 +910,21 @@ h1 img {
 #details #imageUpload:focus {
   outline: 0;
 }
-/* line 855, ../scss/styles.scss */
+/* line 856, ../scss/styles.scss */
 #details .close-button,
 #details .cancel-button {
   background: #888;
 }
-/* line 859, ../scss/styles.scss */
+/* line 860, ../scss/styles.scss */
 #details #imageUpload {
   margin-top: 0;
 }
-/* line 863, ../scss/styles.scss */
+/* line 864, ../scss/styles.scss */
 #details #button_container {
   width: initial;
 }
 
-/* line 871, ../scss/styles.scss */
+/* line 872, ../scss/styles.scss */
 #edit-form-container label {
   display: block;
   text-transform: uppercase;
@@ -934,29 +932,29 @@ h1 img {
   font-size: 1.4rem;
   line-height: 1;
 }
-/* line 879, ../scss/styles.scss */
+/* line 880, ../scss/styles.scss */
 #edit-form-container .form-group {
   display: block;
   width: 100%;
 }
-/* line 883, ../scss/styles.scss */
+/* line 884, ../scss/styles.scss */
 #edit-form-container .form-group:first-of-type {
   margin-top: 0;
 }
-/* line 889, ../scss/styles.scss */
+/* line 890, ../scss/styles.scss */
 #edit-form-container input,
 #edit-form-container select {
   width: 100%;
   height: 20px;
   padding: 0 5px;
 }
-/* line 897, ../scss/styles.scss */
+/* line 898, ../scss/styles.scss */
 #edit-form-container .submit-button,
 #edit-form-container .cancel-button,
 #edit-form-container .delete-button {
   margin: 2rem 1rem 0 0;
 }
-/* line 901, ../scss/styles.scss */
+/* line 902, ../scss/styles.scss */
 #edit-form-container .delete-button {
   background: #8B1E3F;
   margin-bottom: 20px;

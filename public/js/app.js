@@ -11,6 +11,7 @@ function getFiles() {
 		});
 }
 
+
 // A function to refresh the file list
 function refreshFileList() {
   const template = $('#list-template').html();
@@ -24,6 +25,15 @@ function refreshFileList() {
       const data = {files: files};
       const html = compiledTemplate(data);
       $('#list-container').html(html);
+    })
+}
+
+
+// A function to refresh the file entry (Similar to refreshFileList but without Handlebars)
+function refreshFileEntry() {
+  getFiles()
+    .then(files => {
+      window.fileList = files;
     })
 }
 
@@ -134,11 +144,11 @@ function setFormData(data) {
 }
 
 
-// Resets Original Form when Lightbox closes
-function resetForm() {
-  console.log("Form cleared...");
-  setFormData({});
-}
+// // Resets Original Form when Lightbox closes
+// function resetForm() {
+//   console.log("Form cleared...");
+//   setFormData({});
+// }
 
 
 // Delete Data from DB
