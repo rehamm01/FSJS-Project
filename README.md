@@ -1,8 +1,10 @@
 Code Louisville FSJS Project:
 # KY Art Inventory
 
-An Inventory for art-lovers to browse works of art contained in museums around the state of Kentucky.
+An Inventory for art-lovers to browse works of art contained in museums located in the state of Kentucky.
 
+<br>
+<br>
 
 Progress:
 1. Lightbox functionality removed. Artwork Entries are now on their own pages based on unique ID number.
