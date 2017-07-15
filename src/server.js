@@ -11,11 +11,14 @@ var hbs = require('hbs');
 // Connect to MongoDB and create/use database as configured
 mongoose.connect(`mongodb://${config.db.host}/${config.db.dbName}`);
 
+
 // Import all models
 require('./models/file.model.js');
 
+
 // Creates an application object
 const app = express();
+
 
 // Creates Details Page Template
 app.set('view engine', 'html')
@@ -27,14 +30,13 @@ app.set('views', 'public')
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
+
 //Tells server how to use Body Parser
 app.use(bodyParser.json());
 
 
 // Directs our App to the router
 app.use('/api', router);
-
-
 
 
 // Sets each Entry up as it's own page
@@ -51,9 +53,6 @@ app.get('/entry/:id', function (req, res) {
 			res.send(err.message);
 		})
 })
-
-
-
 
 
 //Start the Server

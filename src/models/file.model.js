@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const FileSchema = new mongoose.Schema({
   title: String,
   artist: String,
+  imageLarge: String,
+  imageSmall: String,
   icon: String,
   year: String,
   media: String,

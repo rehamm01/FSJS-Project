@@ -29,11 +29,15 @@ function refreshFileList() {
 }
 
 
-// A function to refresh the file entry (Similar to refreshFileList but without Handlebars)
+// A function to refresh the file entry after it has been edited.
 function refreshFileEntry() {
   getFiles()
     .then(files => {
       window.fileList = files;
+    })
+
+    .done(function() { 
+      $('.entry-wrapper').load(' .art-entry');
     })
 }
 
@@ -58,7 +62,8 @@ function submitFileForm() {
   const fileData = {
     title: $('#file-title').val(),
     artist: $('#file-artist').val(),
-    icon: $('#file-icon').val(),
+    imageLarge: $('#file-imageLarge').val(),
+    imageSmall: $('#file-imageSmall').val(),
     year: $('#file-year').val(),
     media: $('#file-media').val(),
     category: $('#file-category').val(),
@@ -66,13 +71,16 @@ function submitFileForm() {
     _id: $('#file-id').val(),
   };
 
-  let method, url;
+  let method, url, use;
   if (fileData._id) {
     method = 'PUT';
     url = '/api/file/' + fileData._id;
+    refreshFunction = refreshFileEntry();
+
   } else {
     method = 'POST';
     url = '/api/file';
+    refreshFunction = refreshFileList();
   }
 
   $.ajax({
@@ -81,10 +89,11 @@ function submitFileForm() {
     data: JSON.stringify(fileData),
     dataType: 'json',
     contentType : 'application/json',
+
   })
     .done(function(response) {
       console.log("Data Posted");
-      refreshFileList();
+      refreshFunction
       toggleAddFileForm();
     })
     .fail(function(error) {
@@ -95,24 +104,16 @@ function submitFileForm() {
 }
 
 
+// Closes the Edit Form in case the user changes their mind
 function cancelFileForm() {
   toggleAddFileFormVisibility();
 }
 
-// // Edit data in DB  [ORIGINAL]
-// function editFileClick(id) {
-//   const file = window.fileList.find(file => file._id === id);
-//   if (file) {
-//     setFormData(file);
-//     toggleAddFileFormVisibility();
-//   }
-// }
-
-
 
 // Edit data in DB
 function editFileClick(id) {
-  const file = window.fileList.find(file => file._id === id);
+    const file = window.fileList.find(file => file._id === id);
+
   if (file) {
     setFormData(file);
     toggleAddFileFormVisibility();
@@ -144,13 +145,6 @@ function setFormData(data) {
 }
 
 
-// // Resets Original Form when Lightbox closes
-// function resetForm() {
-//   console.log("Form cleared...");
-//   setFormData({});
-// }
-
-
 // Delete Data from DB
 function deleteFileClick(id) {
   if (confirm('Are you sure you want to remove "' + $('#file-title').val() + '" from the Inventory?')) {
@@ -162,7 +156,8 @@ function deleteFileClick(id) {
     })
       .done(function(response) {
         console.log("File", id, "has been removed");
-        refreshFileList();
+        refreshFileEntry();
+        window.location.href = "/";
       })
       .fail(function(error) {
         console.log("File was not removed", error);

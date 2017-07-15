@@ -778,50 +778,70 @@ h1 img {
   background: url("../img/21clex-logo.png") no-repeat;
 }
 /* line 728, ../scss/styles.scss */
+.list-group-item[location="International Museum of the Horse"]:before {
+  background: url("../img/horse-logo.png") no-repeat;
+}
+/* line 732, ../scss/styles.scss */
+.list-group-item[location="University of Kentucky Art Museum"]:before {
+  background: url("../img/uk-logo.png") no-repeat;
+}
+/* line 735, ../scss/styles.scss */
+.list-group-item[location="National Quilt Museum"]:before {
+  background: url("../img/quilt-logo.png") no-repeat;
+}
+/* line 738, ../scss/styles.scss */
+.list-group-item[location="The Kentucky Museum"]:before {
+  background: url("../img/wku-logo.png") no-repeat;
+}
+/* line 741, ../scss/styles.scss */
+.list-group-item[location="Kentucky Folk Art Center"]:before {
+  background: url("../img/folk-logo.png") no-repeat;
+}
+/* line 745, ../scss/styles.scss */
 .list-group-item[category="Art of Ancient Cultures"] {
   border-bottom: 8px solid #5bc0eb;
 }
-/* line 732, ../scss/styles.scss */
+/* line 749, ../scss/styles.scss */
 .list-group-item[category="African Art"] {
   border-bottom: 8px solid #FF6214;
 }
-/* line 736, ../scss/styles.scss */
+/* line 753, ../scss/styles.scss */
 .list-group-item[category="Native American Art"] {
   border-bottom: 8px solid #E0479E;
 }
-/* line 740, ../scss/styles.scss */
+/* line 757, ../scss/styles.scss */
 .list-group-item[category="European Art, 1300-1700"] {
   border-bottom: 8px solid #95C623;
 }
-/* line 744, ../scss/styles.scss */
+/* line 761, ../scss/styles.scss */
 .list-group-item[category="European Art, 1700-1800"] {
   border-bottom: 8px solid #571760;
 }
-/* line 748, ../scss/styles.scss */
+/* line 765, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1800-1900"] {
   border-bottom: 8px solid #FFD43A;
 }
-/* line 752, ../scss/styles.scss */
+/* line 769, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1900-1945"] {
   border-bottom: 8px solid #0A2472;
 }
-/* line 756, ../scss/styles.scss */
+/* line 773, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1945-1980"] {
   border-bottom: 8px solid #C1292E;
 }
-/* line 760, ../scss/styles.scss */
+/* line 777, ../scss/styles.scss */
 .list-group-item[category="Dutch & Flemish Art"] {
   border-bottom: 8px solid #BAE6FF;
 }
-/* line 764, ../scss/styles.scss */
+/* line 781, ../scss/styles.scss */
 .list-group-item[category="Contemporary Art, 1980-Present"] {
   border-bottom: 8px solid #B36CC9;
 }
-/* line 768, ../scss/styles.scss */
+/* line 785, ../scss/styles.scss */
 .list-group-item[category="Art of Kentucky, 1800-1945"] {
   border-bottom: 8px solid #8B1E3F;
 }
-/* line 772, ../scss/styles.scss */
+/* line 789, ../scss/styles.scss */
 .list-group-item[category="Photography"] {
   border-bottom: 8px solid #6A6262;
 }
@@ -829,7 +849,7 @@ h1 img {
 /*----------------------------------------------------------------------
 	DETAILS PAGES
 ----------------------------------------------------------------------*/
-/* line 782, ../scss/styles.scss */
+/* line 799, ../scss/styles.scss */
 .background {
   position: absolute;
   top: 0;
@@ -839,16 +859,17 @@ h1 img {
   height: 1000%;
 }
 
-/* line 791, ../scss/styles.scss */
+/* line 808, ../scss/styles.scss */
 #details {
   background: #fff;
   padding: 10px;
   height: auto;
+  min-height: 480px;
   overflow: auto;
 }
 @media screen and (min-width: 800px) {
-  /* line 797, ../scss/styles.scss */
-  #details img {
+  /* line 815, ../scss/styles.scss */
+  #details #imageLarge {
     max-width: calc(70% - 23px);
     max-height: calc(100vh - 100px);
     display: inline-block;
@@ -858,24 +879,28 @@ h1 img {
     width: auto;
   }
 }
-/* line 810, ../scss/styles.scss */
+/* line 828, ../scss/styles.scss */
 #details div {
+  margin-top: 10px;
+}
+/* line 832, ../scss/styles.scss */
+#details .text-wrapper {
   margin-top: 10px;
   position: relative;
 }
 @media screen and (min-width: 800px) {
-  /* line 810, ../scss/styles.scss */
-  #details div {
+  /* line 832, ../scss/styles.scss */
+  #details .text-wrapper {
     width: 30%;
     display: inline-block;
     vertical-align: top;
   }
 }
-/* line 821, ../scss/styles.scss */
+/* line 843, ../scss/styles.scss */
 #details div.hidden {
   display: none;
 }
-/* line 825, ../scss/styles.scss */
+/* line 847, ../scss/styles.scss */
 #details div#edit-form-container {
   position: absolute;
   width: 100%;
@@ -883,8 +908,13 @@ h1 img {
   height: 100%;
   background: #fff;
   margin-top: 0;
+  z-index: 10;
 }
-/* line 839, ../scss/styles.scss */
+/* line 857, ../scss/styles.scss */
+#details .art-entry {
+  width: 100%;
+}
+/* line 866, ../scss/styles.scss */
 #details .close-button,
 #details .submit-button,
 #details .edit-button,
@@ -901,7 +931,7 @@ h1 img {
   color: #fff;
   background: #00345B;
 }
-/* line 850, ../scss/styles.scss */
+/* line 877, ../scss/styles.scss */
 #details .close-button:focus,
 #details .submit-button:focus,
 #details .edit-button:focus,
@@ -910,21 +940,21 @@ h1 img {
 #details #imageUpload:focus {
   outline: 0;
 }
-/* line 856, ../scss/styles.scss */
+/* line 883, ../scss/styles.scss */
 #details .close-button,
 #details .cancel-button {
   background: #888;
 }
-/* line 860, ../scss/styles.scss */
+/* line 887, ../scss/styles.scss */
 #details #imageUpload {
   margin-top: 0;
 }
-/* line 864, ../scss/styles.scss */
+/* line 891, ../scss/styles.scss */
 #details #button_container {
   width: initial;
 }
 
-/* line 872, ../scss/styles.scss */
+/* line 899, ../scss/styles.scss */
 #edit-form-container label {
   display: block;
   text-transform: uppercase;
@@ -932,29 +962,29 @@ h1 img {
   font-size: 1.4rem;
   line-height: 1;
 }
-/* line 880, ../scss/styles.scss */
+/* line 907, ../scss/styles.scss */
 #edit-form-container .form-group {
   display: block;
   width: 100%;
 }
-/* line 884, ../scss/styles.scss */
+/* line 911, ../scss/styles.scss */
 #edit-form-container .form-group:first-of-type {
   margin-top: 0;
 }
-/* line 890, ../scss/styles.scss */
+/* line 917, ../scss/styles.scss */
 #edit-form-container input,
 #edit-form-container select {
   width: 100%;
   height: 20px;
   padding: 0 5px;
 }
-/* line 898, ../scss/styles.scss */
+/* line 925, ../scss/styles.scss */
 #edit-form-container .submit-button,
 #edit-form-container .cancel-button,
 #edit-form-container .delete-button {
   margin: 2rem 1rem 0 0;
 }
-/* line 902, ../scss/styles.scss */
+/* line 929, ../scss/styles.scss */
 #edit-form-container .delete-button {
   background: #8B1E3F;
   margin-bottom: 20px;

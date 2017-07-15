@@ -24,74 +24,84 @@
 
 			<div class="background">
 				<div id="details">
-					<img src="../img/{{icon}}.jpg">  <!-- <img id="orig" src="" /> -->
-					<div>
-						<div id="edit-form-container" class="hidden">
-							<div id="button_container"> 
-								<button id="imageUpload">Upload an Image</button>
-							</div>
-							<form id="add-file-form">
-								<input type="hidden" id="file-id" value="" />
-								<div class="form-group">
-									<label for="file-title">Title</label>
-									<input type="text" class="form-control" id="file-title" placeholder="title of work">
+					<img id="imageLarge" src="../img/placeholder-large.svg" src="{{imageLarge}}">
+					<img id="imageSmall" class="hidden" src="../img/placeholder-large.svg" src="{{imageSmall}}">
+					<div class="text-wrapper">
+						<div class="form-wrapper">
+							<div id="edit-form-container" class="hidden">
+								<div id="button_container"> 
+									<button id="imageUpload">Upload an Image</button>
 								</div>
-								<div class="form-group">
-									<label for="file-artist">Artist</label>
-									<input type="text" class="form-control" id="file-artist" placeholder="name of artist">
-								</div>
-								<div class="form-group">
-									<label for="file-year">year</label>
-									<input type="text" class="form-control" id="file-year" placeholder="year of creation">
-								</div>
-								<div class="form-group">
-									<label for="file-media">Media</label>
-									<input type="text" class="form-control" id="file-media" placeholder="art medium">
-								</div>
-								<div class="form-group">    
-									<label for="file-category">Category</label>
-									<select name="Category" class="form-control" id="file-category">
-									  <option value="Art of Ancient Cultures">Art of Ancient Cultures</option>
-									  <option value="African Art">African Art</option>
-									  <option value="Native American Art">Native American Art</option>
-									  <option value="European Art, 1300-1700">European Art, 1300-1700</option>
-									  <option value="European Art, 1700-1800">European Art, 1700-1800</option>
-									  <option value="European and American Art, 1800-1900">European and American Art, 1800-1900</option>
-									  <option value="European and American Art, 1900-1945">European and American Art, 1900-1945</option>
-									  <option value="European and American Art, 1945-1980">European and American Art, 1945-1980</option>
-									  <option value="Dutch & Flemish Art">Dutch &amp; Flemish Art</option>
-									  <option value="Contemporary Art, 1980-Present">Contemporary Art, 1980-Present</option>
-									  <option value="Art of Kentucky, 1800-1945">Art of Kentucky, 1800-1945</option>
-									  <option value="Photography">Photography</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label for="file-museum">Museum</label>
-									<select name="Museum" class="form-control" id="file-museum">
-										<option value="Speed Art Museum"> Speed Art Museum</option>
-										<option value="21c Louisville"> 21c Louisville</option>
-										<option value="21c Lexington"> 21c Lexington</option>
-										<option value="KMAC"> Kentucky Museum of Art and Craft</option>
-									</select>
-								</div>
+								<form id="add-file-form">
+									<input type="hidden" id="file-imageLarge" value="" />
+									<input type="hidden" id="file-imageSmall" value="" />
+									<input type="hidden" id="file-id" value="" />
+									<div class="form-group">
+										<label for="file-title">Title</label>
+										<input type="text" class="form-control" id="file-title" placeholder="title of work">
+									</div>
+									<div class="form-group">
+										<label for="file-artist">Artist</label>
+										<input type="text" class="form-control" id="file-artist" placeholder="name of artist">
+									</div>
+									<div class="form-group">
+										<label for="file-year">year</label>
+										<input type="text" class="form-control" id="file-year" placeholder="year of creation">
+									</div>
+									<div class="form-group">
+										<label for="file-media">Media</label>
+										<input type="text" class="form-control" id="file-media" placeholder="art medium">
+									</div>
+									<div class="form-group">    
+										<label for="file-category">Category</label>
+										<select name="Category" class="form-control" id="file-category">
+										  <option value="Art of Ancient Cultures">Art of Ancient Cultures</option>
+										  <option value="African Art">African Art</option>
+										  <option value="Native American Art">Native American Art</option>
+										  <option value="European Art, 1300-1700">European Art, 1300-1700</option>
+										  <option value="European Art, 1700-1800">European Art, 1700-1800</option>
+										  <option value="European and American Art, 1800-1900">European and American Art, 1800-1900</option>
+										  <option value="European and American Art, 1900-1945">European and American Art, 1900-1945</option>
+										  <option value="European and American Art, 1945-1980">European and American Art, 1945-1980</option>
+										  <option value="Dutch & Flemish Art">Dutch &amp; Flemish Art</option>
+										  <option value="Contemporary Art, 1980-Present">Contemporary Art, 1980-Present</option>
+										  <option value="Art of Kentucky, 1800-1945">Art of Kentucky, 1800-1945</option>
+										  <option value="Photography">Photography</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="file-museum">Museum</label>
+										<select name="Museum" class="form-control" id="file-museum">
+											<option value="Speed Art Museum"> Speed Art Museum</option>
+											<option value="21c Louisville"> 21c Louisville</option>
+											<option value="21c Lexington"> 21c Lexington</option>
+											<option value="KMAC"> Kentucky Museum of Art and Craft</option>
+										</select>
+									</div>
 
-								<button type="button" onclick="submitFileForm()" class="submit-button">Submit</button>
-								<button type="button" onclick="cancelFileForm()" class="cancel-button">Cancel</button>
-								<button type="button" class="delete-button" onclick="deleteFileClick('{{_id}}')">Delete Entry</button>
-							</form>
+									<button type="button" onclick="submitFileForm()" class="submit-button">Submit</button>
+									<button type="button" onclick="cancelFileForm()" class="cancel-button">Cancel</button>
+									<button type="button" class="delete-button" onclick="deleteFileClick('{{_id}}')">Delete Entry</button>
+								</form>
+							</div>
 						</div>
-						<button type="button" class="edit-button" onclick="editFileClick('{{_id}}')">Edit</button>
-						<a href="/" class="close-button">Close</a>
-						<h3>{{title}}</h3>
-						<h4>{{artist}}</h4>
-						<p>{{year}}</p>
-						<p>{{media}}</p>
-						<p>{{category}}</p>
-						<p>{{museum}}</p>
+						<div class="entry-wrapper">
+							<div class="art-entry">
+								<button type="button" class="edit-button" onclick="editFileClick('{{_id}}')">Edit</button>
+								<a href="/" class="close-button">Close</a>
+
+								<h3>{{title}}</h3>
+								<h4>{{artist}}</h4>
+								<p>{{year}}</p>
+								<p>{{media}}</p>
+								<p>{{category}}</p>
+								<p>{{museum}}</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
+		
 
 
 
@@ -107,8 +117,10 @@
 		<!-- FILESTACK image upload -->
 		<script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
 		<script> 
-			var orig = document.getElementById('orig'); 
-			var icon = document.getElementById('icon'); 
+			var imageLarge = document.getElementById('imageLarge'); 
+			var imageSmall = document.getElementById('imageSmall');
+			var fileImageLarge = document.getElementById('file-imageLarge'); 
+			var fileImageSmall = document.getElementById('file-imageSmall'); 
 
 			filepicker.setKey( "AaFPWlOjNR0epXhfkRHbHz" ); 
 
@@ -120,12 +132,13 @@
 			    function(Blob){ 
 			      console.log(JSON.stringify(Blob)); 
 			      // original
-			      orig.src =  "https://process.filestackapi.com/A1AJmUYdDTj2Y5wEFtRO7z/resize=h:600/" + Blob.url; 
+			      imageLarge.src = "https://process.filestackapi.com/A1AJmUYdDTj2Y5wEFtRO7z/resize=h:600/" + Blob.url; 
+			      fileImageLarge.value = "https://process.filestackapi.com/A1AJmUYdDTj2Y5wEFtRO7z/resize=h:600/" + Blob.url;
 			      // 2
-			      icon.src = "https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=w:400,h:400,fit:crop/" + Blob.url;
-
-			    console.log(orig.src);
-				console.log(icon.src);
+			      imageSmall.src = "https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=w:400,h:400,fit:crop/" + Blob.url;
+			      fileImageSmall.value = "https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=w:400,h:400,fit:crop/" + Blob.url;
+			      console.log(fileImageLarge.value);
+			      console.log(fileImageSmall.value);
 			    }
 
 			  );
@@ -133,7 +146,7 @@
 			  
 			  // need to somehow grab each URL and store them in each <img> src
 
-			  refreshFileList();      
+			  //refreshFileList(); or refreshFileEntry(); // ???   
 			}; 
 		</script>
 

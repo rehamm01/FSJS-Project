@@ -725,6 +725,23 @@ h1 {
 	    background: url('../img/21clex-logo.png') no-repeat;
 	}
 
+	&[location="International Museum of the Horse"]:before {
+	    background: url('../img/horse-logo.png') no-repeat;
+	}
+
+	&[location="University of Kentucky Art Museum"]:before {
+	    background: url('../img/uk-logo.png') no-repeat;
+	}
+	&[location="National Quilt Museum"]:before {
+	    background: url('../img/quilt-logo.png') no-repeat;
+	}
+	&[location="The Kentucky Museum"]:before {
+	    background: url('../img/wku-logo.png') no-repeat;
+	}
+	&[location="Kentucky Folk Art Center"]:before {
+	    background: url('../img/folk-logo.png') no-repeat;
+	}
+
 	&[category="Art of Ancient Cultures"] {
 		border-bottom: 8px solid #5bc0eb;
 	}
@@ -792,9 +809,10 @@ h1 {
 	background: #fff;
     padding: 10px;
     height: auto;
+    min-height: 480px;
     overflow: auto;
 
-	img {
+	#imageLarge {
 		
 		@media screen and (min-width: 800px) {
 			max-width: calc(70% - 23px);
@@ -808,6 +826,10 @@ h1 {
 	}
 
 	div {
+		margin-top: 10px;
+	}
+
+	.text-wrapper {
 		margin-top: 10px;
 		position: relative;
 		
@@ -829,6 +851,11 @@ h1 {
 	    height: 100%;
 	    background: #fff;
 	    margin-top: 0;
+	    z-index: 10;
+	}
+
+	.art-entry {
+	    width: 100%;
 	}
 
 	.close-button,

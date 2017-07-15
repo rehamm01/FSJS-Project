@@ -56,6 +56,9 @@
 			<div id="form-container">
 				<p class="greeting"></p>
 				<form>
+					<input type="hidden" id="file-imageLarge" value="" />
+					<input type="hidden" id="file-imageSmall" value="" />
+					<input type="hidden" id="file-id" value="" />
 					<div class="form-group">
 						<label for="file-title">Title</label>
 						<input type="text" class="form-control" id="file-title" placeholder="title of work">
@@ -96,6 +99,11 @@
 							<option value="21c Louisville"> 21c Louisville</option>
 							<option value="21c Lexington"> 21c Lexington</option>
 							<option value="KMAC"> Kentucky Museum of Art and Craft</option>
+							<option value="International Museum of the Horse"> International Museum of the Horse</option>
+							<option value="University of Kentucky Art Museum"> University of Kentucky Art Museum</option>
+							<option value="National Quilt Museum"> National Quilt Museum</option>
+							<option value="The Kentucky Museum"> The Kentucky Museum</option>
+							<option value="Kentucky Folk Art Center"> Kentucky Folk Art Center</option>
 						</select>
 					</div>
 					<button type="button" onclick="submitFileForm()">Add</button>
@@ -111,7 +119,7 @@
 				{{#each files}}
 					<li id="{{_id}}" class="list-group-item" location="{{museum}}" category="{{category}}">
 						<a href="/entry/{{_id}}">
-							<img src="../img/placeholder.svg">
+							<img id="imageSmall" src="../img/placeholder.svg" src="{{imageSmall}}">
 							<h3>{{title}}</h3>
 							<h4>{{artist}}</h4>
 
