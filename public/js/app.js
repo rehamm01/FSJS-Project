@@ -165,3 +165,35 @@ function deleteFileClick(id) {
 
   }
 }
+
+
+// Sort Categories via Nav Menu
+
+function categorySort(event) {
+  var buttonCategory =$(event.target).attr('category');   // Gets category associated with the Nav button clicked
+  var getCategory = $(".list-group-item");
+  console.log(buttonCategory);
+
+  for( var i = 0; i < getCategory.length; i++) {
+      var element = getCategory.eq(i);
+      var categoryValue = $(element).attr('category');
+      console.log(categoryValue);
+
+    if(buttonCategory != categoryValue) {
+        $(element).addClass('sort-hide');
+        $( '.header-button' ).toggleClass( "close-nav" );
+        $( ".header-nav" ).css('display', 'none');
+    }
+          
+  } 
+
+
+}
+
+
+
+
+
+
+
+

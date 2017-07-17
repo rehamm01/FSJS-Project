@@ -12,11 +12,11 @@ Progress:
 4. Fixed Delete Button bug
 
 Current Objectives:
-1. Insert imageLarge data into #imageLarge src on Details Page.
-2. Insert imageSmall data into #imageSmall src on Home Page.
-2. Fix bug with 2nd Edit button click.
+1. Refine Nav Link Sorting Functionality
+2. Get Placeholder Image scripts to execute when page loads. (Not just in the browser console.)
+3. Fix bug with 2nd Edit button click not filling out form with updated info.
+4. Fix bug with Image being deleted after second Edit.
 
 Future Objectives:
-1.	Have Nav links sort Items by Category
-2.	Have Search Bar in Nav return results
+1.	Include a Search Functionality so Users can Search the database
  

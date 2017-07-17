@@ -24,8 +24,8 @@
 
 			<div class="background">
 				<div id="details">
-					<img id="imageLarge" src="../img/placeholder-large.svg" src="{{imageLarge}}">
-					<img id="imageSmall" class="hidden" src="../img/placeholder-large.svg" src="{{imageSmall}}">
+					<img id="imageLarge" src="{{imageLarge}}/">
+					<img id="imageSmall" class="hidden" src="{{imageSmall}}">
 					<div class="text-wrapper">
 						<div class="form-wrapper">
 							<div id="edit-form-container" class="hidden">
@@ -76,6 +76,11 @@
 											<option value="21c Louisville"> 21c Louisville</option>
 											<option value="21c Lexington"> 21c Lexington</option>
 											<option value="KMAC"> Kentucky Museum of Art and Craft</option>
+											<option value="International Museum of the Horse"> International Museum of the Horse</option>
+											<option value="University of Kentucky Art Museum"> University of Kentucky Art Museum</option>
+											<option value="National Quilt Museum"> National Quilt Museum</option>
+											<option value="The Kentucky Museum"> The Kentucky Museum</option>
+											<option value="Kentucky Folk Art Center"> Kentucky Folk Art Center</option>
 										</select>
 									</div>
 
@@ -117,6 +122,7 @@
 		<!-- FILESTACK image upload -->
 		<script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
 		<script> 
+
 			var imageLarge = document.getElementById('imageLarge'); 
 			var imageSmall = document.getElementById('imageSmall');
 			var fileImageLarge = document.getElementById('file-imageLarge'); 
@@ -142,11 +148,7 @@
 			    }
 
 			  );
-
-			  
-			  // need to somehow grab each URL and store them in each <img> src
-
-			  //refreshFileList(); or refreshFileEntry(); // ???   
+ 
 			}; 
 		</script>
 

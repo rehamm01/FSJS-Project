@@ -21,23 +21,23 @@
 
                 <div class="header-nav">
                   <ul>
-                    <li><button type="button" class="ancient" onclick="">Art of Ancient Cultures</button></li>
-                    <li><button type="button" class="african" onclick="">African Art</button></li>
-                    <li><button type="button" class="native-american" onclick="">Native American Art</button></li>
-                    <li><button type="button" class="euro1" onclick="">European Art, 1300-1700</button></li>
-                    <li><button type="button" class="euro2" onclick="">European Art, 1700-1800</button></li>
-                    <li><button type="button" class="euro3" onclick="">Euro/American Art, 1800-1900</button></li>
-                    <li><button type="button" class="euro4" onclick="">Euro/American Art, 1900-1945</button></li>
-                    <li><button type="button" class="euro5" onclick="">Euro/American Art, 1945-1980</button></li>
-                    <li><button type="button" class="dutch" onclick="">Dutch &amp; Flemish Art</button></li>
-                    <li><button type="button" class="contemporary" onclick="">Contemporary Art, 1980-Present</button></li>
-                    <li><button type="button" class="kentucky" onclick="">Art of Kentucky, 1800-1945</button></li>
-                    <li><button type="button" class="photography" onclick="">Photography</button></li>
+                    <li><button type="button" class="ancient" category="Art of Ancient Cultures" onclick="categorySort(event)">Art of Ancient Cultures</button></li>
+                    <li><button type="button" class="african" category="African Art" onclick="categorySort(event)">African Art</button></li>
+                    <li><button type="button" class="native-american" category="Native American Art" onclick="categorySort(event)">Native American Art</button></li>
+                    <li><button type="button" class="euro1" category="European Art, 1300-1700" onclick="categorySort(event)">European Art, 1300-1700</button></li>
+                    <li><button type="button" class="euro2" category="European Art, 1700-1800" onclick="categorySort(event)">European Art, 1700-1800</button></li>
+                    <li><button type="button" class="euro3" category="European and American Art, 1800-1900" onclick="categorySort(event)">Euro/American Art, 1800-1900</button></li>
+                    <li><button type="button" class="euro4" category="European and American Art, 1900-1945" onclick="categorySort(event)">Euro/American Art, 1900-1945</button></li>
+                    <li><button type="button" class="euro5" category="European and American Art, 1945-1980" onclick="categorySort(event)">Euro/American Art, 1945-1980</button></li>
+                    <li><button type="button" class="dutch" category="Dutch & Flemish Art" onclick="categorySort(event)">Dutch &amp; Flemish Art</button></li>
+                    <li><button type="button" class="contemporary" category="Contemporary Art, 1980-Present" onclick="categorySort(event)">Contemporary Art, 1980-Present</button></li>
+                    <li><button type="button" class="kentucky" category="Art of Kentucky, 1800-1945" onclick="categorySort(event)">Art of Kentucky, 1800-1945</button></li>
+                    <li><button type="button" class="photography" category="Photography" onclick="categorySort(event)">Photography</button></li>
                   </ul>
                 </div>
 			</div>
 
-			<div class="search">
+<!-- 			<div class="search">
 				<button class="search-button"><span> </span></button>
 
                 <div class="search-container">
@@ -47,7 +47,7 @@
 						<input type="button" value="Search">
 					</form>
                 </div>
-			</div>
+			</div> -->
 
 		</header>
 
@@ -114,29 +114,26 @@
 
 		</main>
 
-		<script id="list-template" type="text/x-handlebars-template">
-			<ul class="list-group">
-				{{#each files}}
-					<li id="{{_id}}" class="list-group-item" location="{{museum}}" category="{{category}}">
-						<a href="/entry/{{_id}}">
-							<img id="imageSmall" src="../img/placeholder.svg" src="{{imageSmall}}">
-							<h3>{{title}}</h3>
-							<h4>{{artist}}</h4>
-
-							<p>{{category}}</p>
-							<p>{{museum}}</p>
-						</a>
-					</li>
-				{{/each}}
-			</ul>
-		</script>
-
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
 
 		<script src="/js/app.js"></script>
 		<script src="/js/front-end.js"></script>
+
+		<script id="list-template" type="text/x-handlebars-template">
+			<ul class="list-group">
+				{{#each files}}
+					<li id="{{_id}}" class="list-group-item" location="{{museum}}" category="{{category}}">
+						<a href="/entry/{{_id}}">
+							<img class="imageSmall" src="{{imageSmall}}/">
+							<h3>{{title}}</h3>
+							<h4>{{artist}}</h4>
+						</a>
+					</li>
+				{{/each}}
+			</ul>
+		</script>
 
 		<script>
 			$(document).ready(function() {
@@ -151,8 +148,6 @@
 				refreshFileList();
 		</script>
 
-		
-	
 
 	</body>
 
