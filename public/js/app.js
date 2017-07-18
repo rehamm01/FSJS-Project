@@ -7,7 +7,7 @@ function getFiles() {
 		})
 		.fail(err => {
 			console.log("Error in getFiles()", err);
-			throw err;
+			throw err; 
 		});
 }
 
@@ -95,7 +95,22 @@ function submitFileForm() {
       console.log("Data Posted");
       refreshFunction
       toggleAddFileForm();
+
+      setTimeout( function thumbnailLoad(){ 
+        var eachImageSmall = $(".imageSmall");
+
+        for( var i = 0; i < eachImageSmall.length; i++) {
+            var element = eachImageSmall.eq(i);
+
+            if(element.prop('currentSrc') == 'http://localhost:3030/') {
+                $(element).attr("src", "http://localhost:3030/img/placeholder.svg");
+
+            }
+        }
+      }  , 500 );
+
     })
+    
     .fail(function(error) {
       console.log("Posting failed", error);
     })
@@ -169,31 +184,50 @@ function deleteFileClick(id) {
 
 // Sort Categories via Nav Menu
 
+var getCategory = $(".list-group-item");
+
+function scrollToResults() {
+  $( '.header-button' ).toggleClass( "close-nav" );  // closes Nav
+  $( ".header-nav").css('display', 'none');
+
+  $('html, body').stop(true, false).animate({     // animation to results
+      scrollTop: $("#list-container").offset().top
+  }, 2000);
+}
+
 function categorySort(event) {
   var buttonCategory =$(event.target).attr('category');   // Gets category associated with the Nav button clicked
   var getCategory = $(".list-group-item");
-  console.log(buttonCategory);
+
 
   for( var i = 0; i < getCategory.length; i++) {
       var element = getCategory.eq(i);
       var categoryValue = $(element).attr('category');
-      console.log(categoryValue);
 
     if(buttonCategory != categoryValue) {
-        $(element).addClass('sort-hide');
-        $( '.header-button' ).toggleClass( "close-nav" );
-        $( ".header-nav" ).css('display', 'none');
+        $(element).addClass('sort-hide');   // hides entries with different category values
+
+        scrollToResults();
     }
-          
+
+    // If there are no entries in that category:
+    if($(getCategory).siblings(':not(.sort-hide)').length == 0){
+      $("#list-container").append( "<div class='no-results'><p>There are no works of art matching this criteria in the Inventory yet. <br>If you have information about artwork that is missing, please submit it in the form above!</p> </div>");
+      
+      scrollToResults();
+    }      
   } 
 
+  // Add clear sort button after results
+  $("#list-container").append("<div class='clear-sort'><button type='button' onclick='clearSort()'>Clear Sort</button></div>");
 
 }
 
-
-
-
-
+function clearSort() {
+  $(".list-group-item").removeClass('sort-hide');
+  $( ".clear-sort").remove();
+  $( ".no-results").remove();
+}
 
 
 

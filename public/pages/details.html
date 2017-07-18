@@ -117,6 +117,17 @@
 
 		<script>
 				refreshFileEntry();
+
+				// Image Placeholder on Details page prior to Image Upload
+				setTimeout( function(){ 
+				    var eachImageLarge = $("#imageLarge");
+
+				    if(eachImageLarge.prop('currentSrc') == 'http://localhost:3030/') {
+				        $(eachImageLarge).attr("src", "http://localhost:3030/img/placeholder-large.svg");
+				        console.log(eachImageLarge);
+
+				    }
+				}  , 500 );
 		</script>
 
 		<!-- FILESTACK image upload -->

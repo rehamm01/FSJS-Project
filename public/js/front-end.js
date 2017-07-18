@@ -7,6 +7,8 @@ $(document).ready(function () {
 	$( ".header-button" ).click(function() {
         $( this ).toggleClass( "close-nav" );
         $(".list-group-item").removeClass('sort-hide');
+        $( ".no-results").remove();
+        $( ".clear-sort").remove();
         $( ".header-nav" ).slideToggle( "100", function() {
         });
 
@@ -34,33 +36,21 @@ $(document).ready(function () {
 
 
     // Thumbnail Placeholder on Homepage prior to Image Upload
+    setTimeout( function thumbnailLoad(){ 
+        var eachImageSmall = $(".imageSmall");
 
-    var eachImageSmall = $(".imageSmall");
+        for( var i = 0; i < eachImageSmall.length; i++) {
+            var element = eachImageSmall.eq(i);
 
-    for( var i = 0; i < eachImageSmall.length; i++) {
-        var element = eachImageSmall.eq(i);
+            if(element.prop('currentSrc') == 'http://localhost:3030/') {
+                $(element).attr("src", "http://localhost:3030/img/placeholder.svg");
+                console.log(element);
 
-        if(element.prop('currentSrc') == 'http://localhost:3030/') {
-            $(element).attr("src", "http://localhost:3030/img/placeholder.svg");
-            console.log(element);
-
-        } else {
-            console.log('Image has been submitted');
+            } else {
+                console.log('Image has been submitted');
+            }
         }
-    }
-
-
-
-    // Image Placeholder on Details page prior to Image Upload
-
-    var eachImageLarge = $("#imageLarge");
-
-    if(eachImageLarge.prop('currentSrc') == 'http://localhost:3030/') {
-        $(eachImageLarge).attr("src", "http://localhost:3030/img/placeholder-large.svg");
-        console.log(eachImageLarge);
-
-    }
-
+    }  , 500 );
 
 
 });

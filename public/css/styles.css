@@ -86,7 +86,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  padding: 0;
+  padding: 0 0 150px;
   background: rgba(244, 244, 244, 0.75);
   background: -moz-linear-gradient(top, rgba(244, 244, 244, 0.75) 75%, #e6e6e6 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(75%, rgba(244, 244, 244, 0.75)), color-stop(100%, #e6e6e6));
@@ -107,21 +107,21 @@ main {
   overflow-x: hidden;
   width: 100%;
 }
-/* line 101, ../scss/styles.scss */
+/* line 102, ../scss/styles.scss */
 main:after {
   clear: both;
   content: "";
   display: block;
 }
 
-/* line 108, ../scss/styles.scss */
+/* line 109, ../scss/styles.scss */
 .wrapper {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* line 114, ../scss/styles.scss */
+/* line 115, ../scss/styles.scss */
 .wrapper::after {
   content: "";
   display: table;
@@ -129,71 +129,71 @@ main:after {
   width: 100%;
 }
 
-/* line 121, ../scss/styles.scss */
+/* line 122, ../scss/styles.scss */
 h1, h2, h3, h4 {
   margin: 1rem 0;
   font-weight: 700;
   line-height: 1.1;
 }
 
-/* line 127, ../scss/styles.scss */
+/* line 128, ../scss/styles.scss */
 h1 {
   font-size: 2.4rem;
   margin: 0;
 }
 
-/* line 132, ../scss/styles.scss */
+/* line 133, ../scss/styles.scss */
 h2 {
   font-size: 2.0rem;
   color: #fff;
 }
 
-/* line 137, ../scss/styles.scss */
+/* line 138, ../scss/styles.scss */
 h3 {
   font-size: 2.0rem;
   margin-bottom: 0;
 }
 
-/* line 142, ../scss/styles.scss */
+/* line 143, ../scss/styles.scss */
 h4 {
   font-size: 1.6rem;
   margin-top: .75rem;
 }
 
-/* line 147, ../scss/styles.scss */
+/* line 148, ../scss/styles.scss */
 a {
   text-decoration: none;
   color: inherit;
 }
-/* line 151, ../scss/styles.scss */
+/* line 152, ../scss/styles.scss */
 a:focus {
   outline: 1px dotted black !important;
 }
 
-/* line 156, ../scss/styles.scss */
+/* line 157, ../scss/styles.scss */
 p {
   font-size: 1.4rem;
   line-height: 1;
   margin-bottom: .75rem;
 }
 
-/* line 162, ../scss/styles.scss */
+/* line 163, ../scss/styles.scss */
 img {
   width: 100%;
 }
 
-/* line 166, ../scss/styles.scss */
+/* line 167, ../scss/styles.scss */
 button {
   border: 0;
   background: rgba(0, 0, 0, 0);
   font-family: inherit;
 }
-/* line 171, ../scss/styles.scss */
+/* line 172, ../scss/styles.scss */
 button:focus {
   outline: 1px dotted black;
 }
 
-/* line 176, ../scss/styles.scss */
+/* line 177, ../scss/styles.scss */
 .aria {
   display: block;
   overflow: hidden;
@@ -202,68 +202,68 @@ button:focus {
   z-index: -1;
 }
 
-/* line 184, ../scss/styles.scss */
+/* line 185, ../scss/styles.scss */
 input {
   border: 1px solid #bfbfbf;
   border-radius: 0;
 }
 
-/* line 189, ../scss/styles.scss */
+/* line 190, ../scss/styles.scss */
 .hidden {
   display: none;
 }
 
-/* line 193, ../scss/styles.scss */
+/* line 194, ../scss/styles.scss */
 .sort-hide {
   display: none !important;
 }
 
 @-webkit-keyframes ButtonGradient {
-  /* line 198, ../scss/styles.scss */
+  /* line 199, ../scss/styles.scss */
   0% {
     background-position: 0% 50%;
   }
 
-  /* line 199, ../scss/styles.scss */
+  /* line 200, ../scss/styles.scss */
   50% {
     background-position: 100% 50%;
   }
 
-  /* line 200, ../scss/styles.scss */
+  /* line 201, ../scss/styles.scss */
   100% {
     background-position: 0% 50%;
   }
 }
 
 @-moz-keyframes ButtonGradient {
-  /* line 203, ../scss/styles.scss */
+  /* line 204, ../scss/styles.scss */
   0% {
     background-position: 0% 50%;
   }
 
-  /* line 204, ../scss/styles.scss */
+  /* line 205, ../scss/styles.scss */
   50% {
     background-position: 100% 50%;
   }
 
-  /* line 205, ../scss/styles.scss */
+  /* line 206, ../scss/styles.scss */
   100% {
     background-position: 0% 50%;
   }
 }
 
 @keyframes ButtonGradient {
-  /* line 208, ../scss/styles.scss */
+  /* line 209, ../scss/styles.scss */
   0% {
     background-position: 0% 50%;
   }
 
-  /* line 209, ../scss/styles.scss */
+  /* line 210, ../scss/styles.scss */
   50% {
     background-position: 100% 50%;
   }
 
-  /* line 210, ../scss/styles.scss */
+  /* line 211, ../scss/styles.scss */
   100% {
     background-position: 0% 50%;
   }
@@ -272,7 +272,7 @@ input {
 /*----------------------------------------------------------------------
 	HEADER
 ----------------------------------------------------------------------*/
-/* line 218, ../scss/styles.scss */
+/* line 219, ../scss/styles.scss */
 header {
   position: relative;
   background: url("../img/header.jpg") no-repeat;
@@ -283,14 +283,14 @@ header {
   border-bottom: 2px solid #00345B;
 }
 @media screen and (min-width: 500px) {
-  /* line 218, ../scss/styles.scss */
+  /* line 219, ../scss/styles.scss */
   header {
     padding: 0;
     height: 500px;
   }
 }
 
-/* line 234, ../scss/styles.scss */
+/* line 235, ../scss/styles.scss */
 h1 img {
   position: absolute;
   top: 50%;
@@ -299,7 +299,7 @@ h1 img {
   left: 10%;
 }
 @media screen and (min-width: 500px) {
-  /* line 234, ../scss/styles.scss */
+  /* line 235, ../scss/styles.scss */
   h1 img {
     width: 400px;
     left: calc(50% - 200px);
@@ -309,7 +309,7 @@ h1 img {
 /*----------------------------------------------------------------------
 	NAVIGATION
 ----------------------------------------------------------------------*/
-/* line 253, ../scss/styles.scss */
+/* line 254, ../scss/styles.scss */
 .header-nav {
   display: none;
   position: absolute;
@@ -321,7 +321,7 @@ h1 img {
   padding: 60px 0;
 }
 @media screen and (min-width: 900px) {
-  /* line 253, ../scss/styles.scss */
+  /* line 254, ../scss/styles.scss */
   .header-nav {
     position: fixed;
     width: 230px;
@@ -331,7 +331,7 @@ h1 img {
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
   }
 }
-/* line 272, ../scss/styles.scss */
+/* line 273, ../scss/styles.scss */
 .header-nav button {
   width: 100%;
   padding: 10px 15px 7px;
@@ -343,19 +343,19 @@ h1 img {
   line-height: 1;
   cursor: pointer;
 }
-/* line 284, ../scss/styles.scss */
+/* line 285, ../scss/styles.scss */
 .header-nav button:hover, .header-nav button:focus {
   color: #000;
   background: #fff;
   outline: 1px dotted #000;
 }
 
-/* line 292, ../scss/styles.scss */
+/* line 293, ../scss/styles.scss */
 .close-nav {
   display: block;
 }
 
-/* line 296, ../scss/styles.scss */
+/* line 297, ../scss/styles.scss */
 .header-button {
   padding: 0;
   margin: 0;
@@ -370,12 +370,12 @@ h1 img {
   z-index: 10;
 }
 @media screen and (min-width: 900px) {
-  /* line 311, ../scss/styles.scss */
+  /* line 312, ../scss/styles.scss */
   .header-button.close-nav {
     position: fixed;
   }
 }
-/* line 318, ../scss/styles.scss */
+/* line 319, ../scss/styles.scss */
 .header-button span,
 .header-button span:before,
 .header-button span:after {
@@ -390,20 +390,20 @@ h1 img {
   -ms-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
-/* line 331, ../scss/styles.scss */
+/* line 332, ../scss/styles.scss */
 .header-button span:before {
   top: -10px;
 }
-/* line 335, ../scss/styles.scss */
+/* line 336, ../scss/styles.scss */
 .header-button span:after {
   bottom: -5px;
 }
-/* line 339, ../scss/styles.scss */
+/* line 340, ../scss/styles.scss */
 .header-button.close-nav span {
   background: transparent;
   position: relative;
 }
-/* line 343, ../scss/styles.scss */
+/* line 344, ../scss/styles.scss */
 .header-button.close-nav span:before {
   top: 0;
   -webkit-transform: rotate(45deg);
@@ -412,7 +412,7 @@ h1 img {
   transform: rotate(45deg);
   background: #00345B;
 }
-/* line 352, ../scss/styles.scss */
+/* line 353, ../scss/styles.scss */
 .header-button.close-nav span:after {
   top: -5px;
   -webkit-transform: rotate(135deg);
@@ -425,7 +425,7 @@ h1 img {
 /*----------------------------------------------------------------------
 	SEARCH
 ----------------------------------------------------------------------*/
-/* line 368, ../scss/styles.scss */
+/* line 369, ../scss/styles.scss */
 .search-button {
   position: absolute;
   top: 15px;
@@ -435,7 +435,7 @@ h1 img {
   padding: 0;
   margin: 0;
 }
-/* line 377, ../scss/styles.scss */
+/* line 378, ../scss/styles.scss */
 .search-button span {
   background: url("../img/search.svg") no-repeat;
   padding: 0;
@@ -450,13 +450,13 @@ h1 img {
   display: block;
 }
 @media screen and (min-width: 900px) {
-  /* line 393, ../scss/styles.scss */
+  /* line 394, ../scss/styles.scss */
   .search-button.close-search {
     position: fixed;
     z-index: 10;
   }
 }
-/* line 399, ../scss/styles.scss */
+/* line 400, ../scss/styles.scss */
 .search-button.close-search span {
   width: 28px;
   height: 5px;
@@ -471,7 +471,7 @@ h1 img {
   background: transparent;
   position: relative;
 }
-/* line 413, ../scss/styles.scss */
+/* line 414, ../scss/styles.scss */
 .search-button.close-search span:before {
   width: 28px;
   height: 5px;
@@ -485,7 +485,7 @@ h1 img {
   transform: rotate(45deg);
   background: #00345B;
 }
-/* line 427, ../scss/styles.scss */
+/* line 428, ../scss/styles.scss */
 .search-button.close-search span:after {
   width: 28px;
   height: 5px;
@@ -500,7 +500,7 @@ h1 img {
   background: #00345B;
 }
 
-/* line 443, ../scss/styles.scss */
+/* line 444, ../scss/styles.scss */
 .search-container {
   display: none;
   position: absolute;
@@ -511,7 +511,7 @@ h1 img {
   padding: 60px 0;
 }
 @media screen and (min-width: 900px) {
-  /* line 443, ../scss/styles.scss */
+  /* line 444, ../scss/styles.scss */
   .search-container {
     position: fixed;
     right: 0;
@@ -522,17 +522,17 @@ h1 img {
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
   }
 }
-/* line 462, ../scss/styles.scss */
+/* line 463, ../scss/styles.scss */
 .search-container form {
   padding: 10px;
 }
-/* line 466, ../scss/styles.scss */
+/* line 467, ../scss/styles.scss */
 .search-container label {
   text-transform: uppercase;
   font-size: 1.6rem;
   font-weight: bold;
 }
-/* line 472, ../scss/styles.scss */
+/* line 473, ../scss/styles.scss */
 .search-container input[type="button"] {
   border: 0;
   background: #00345B;
@@ -544,7 +544,7 @@ h1 img {
   height: 35px;
   background-position: 3px;
 }
-/* line 484, ../scss/styles.scss */
+/* line 485, ../scss/styles.scss */
 .search-container input[type="text"] {
   display: inline-block;
   height: 36px;
@@ -556,66 +556,66 @@ h1 img {
 /*----------------------------------------------------------------------
 	ART CATEGORIES
 ----------------------------------------------------------------------*/
-/* line 498, ../scss/styles.scss */
+/* line 499, ../scss/styles.scss */
 .ancient {
   background-color: #5bc0eb;
 }
 
-/* line 502, ../scss/styles.scss */
+/* line 503, ../scss/styles.scss */
 .african {
   background-color: #FF6214;
 }
 
-/* line 506, ../scss/styles.scss */
+/* line 507, ../scss/styles.scss */
 .native-american {
   background-color: #E0479E;
 }
 
-/* line 510, ../scss/styles.scss */
+/* line 511, ../scss/styles.scss */
 .euro1 {
   background-color: #95C623;
 }
 
-/* line 514, ../scss/styles.scss */
+/* line 515, ../scss/styles.scss */
 .euro2 {
   background-color: #571760;
   color: #fff;
 }
 
-/* line 519, ../scss/styles.scss */
+/* line 520, ../scss/styles.scss */
 .euro3 {
   background-color: #FFD43A;
 }
 
-/* line 523, ../scss/styles.scss */
+/* line 524, ../scss/styles.scss */
 .euro4 {
   background-color: #0A2472;
   color: #fff;
 }
 
-/* line 528, ../scss/styles.scss */
+/* line 529, ../scss/styles.scss */
 .euro5 {
   background-color: #C1292E;
   color: #fff;
 }
 
-/* line 533, ../scss/styles.scss */
+/* line 534, ../scss/styles.scss */
 .dutch {
   background-color: #BAE6FF;
 }
 
-/* line 537, ../scss/styles.scss */
+/* line 538, ../scss/styles.scss */
 .contemporary {
   background-color: #B36CC9;
 }
 
-/* line 541, ../scss/styles.scss */
+/* line 542, ../scss/styles.scss */
 .kentucky {
   background-color: #8B1E3F;
   color: #fff;
 }
 
-/* line 546, ../scss/styles.scss */
+/* line 547, ../scss/styles.scss */
 .photography {
   background-color: #6A6262;
   color: #fff;
@@ -624,7 +624,7 @@ h1 img {
 /*----------------------------------------------------------------------
 	FORM
 ----------------------------------------------------------------------*/
-/* line 556, ../scss/styles.scss */
+/* line 557, ../scss/styles.scss */
 #form-container {
   background: #eaf5fc;
   margin-bottom: 5rem;
@@ -632,25 +632,25 @@ h1 img {
   -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
 }
-/* line 563, ../scss/styles.scss */
+/* line 564, ../scss/styles.scss */
 #form-container form {
   line-height: 1;
   font-size: 1.6rem;
   padding: 20px 10px;
 }
 @media screen and (min-width: 450px) {
-  /* line 563, ../scss/styles.scss */
+  /* line 564, ../scss/styles.scss */
   #form-container form {
     padding-bottom: 35px;
   }
 }
 @media screen and (min-width: 1000px) {
-  /* line 563, ../scss/styles.scss */
+  /* line 564, ../scss/styles.scss */
   #form-container form {
     padding: 20px 20px 35px;
   }
 }
-/* line 577, ../scss/styles.scss */
+/* line 578, ../scss/styles.scss */
 #form-container form label {
   display: block;
   text-transform: uppercase;
@@ -658,7 +658,7 @@ h1 img {
   margin: 15px 0 3px;
   border: 0;
 }
-/* line 585, ../scss/styles.scss */
+/* line 586, ../scss/styles.scss */
 #form-container form button {
   font-size: 1.6rem;
   font-weight: 900;
@@ -678,68 +678,68 @@ h1 img {
   animation: ButtonGradient 30s ease infinite;
 }
 @media screen and (min-width: 1000px) {
-  /* line 585, ../scss/styles.scss */
+  /* line 586, ../scss/styles.scss */
   #form-container form button {
     display: inline-block;
     width: 13.6%;
   }
 }
 @media screen and (min-width: 1400px) {
-  /* line 585, ../scss/styles.scss */
+  /* line 586, ../scss/styles.scss */
   #form-container form button {
     width: 14.3%;
   }
 }
-/* line 614, ../scss/styles.scss */
+/* line 615, ../scss/styles.scss */
 #form-container form input,
 #form-container form select {
   width: 100%;
   padding: 0 10px;
   height: 35px;
 }
-/* line 623, ../scss/styles.scss */
+/* line 624, ../scss/styles.scss */
 #form-container form .form-group:first-of-type label {
   margin-top: 0;
 }
 @media screen and (min-width: 450px) {
-  /* line 620, ../scss/styles.scss */
+  /* line 621, ../scss/styles.scss */
   #form-container form .form-group {
     display: inline-block;
     width: 49%;
   }
-  /* line 632, ../scss/styles.scss */
+  /* line 633, ../scss/styles.scss */
   #form-container form .form-group:nth-of-type(odd) {
     margin-right: 1%;
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 620, ../scss/styles.scss */
+  /* line 621, ../scss/styles.scss */
   #form-container form .form-group {
     width: 31.9%;
   }
-  /* line 643, ../scss/styles.scss */
+  /* line 644, ../scss/styles.scss */
   #form-container form .form-group:nth-of-type(1), #form-container form .form-group:nth-of-type(2), #form-container form .form-group:nth-of-type(4), #form-container form .form-group:nth-of-type(5) {
     margin-right: 1%;
   }
 }
 @media screen and (min-width: 800px) {
-  /* line 620, ../scss/styles.scss */
+  /* line 621, ../scss/styles.scss */
   #form-container form .form-group {
     width: 15.4%;
   }
-  /* line 651, ../scss/styles.scss */
+  /* line 652, ../scss/styles.scss */
   #form-container form .form-group:not(:last-of-type) {
     margin-right: 1%;
   }
 }
 @media screen and (min-width: 1000px) {
-  /* line 620, ../scss/styles.scss */
+  /* line 621, ../scss/styles.scss */
   #form-container form .form-group {
     width: 13%;
     margin-right: 1%;
   }
 }
-/* line 664, ../scss/styles.scss */
+/* line 665, ../scss/styles.scss */
 #form-container .greeting {
   padding: 20px 10px 0;
   font-size: 1.8rem;
@@ -749,7 +749,7 @@ h1 img {
   margin: 0 auto 1rem;
 }
 @media screen and (min-width: 800px) {
-  /* line 664, ../scss/styles.scss */
+  /* line 665, ../scss/styles.scss */
   #form-container .greeting {
     padding: 40px 20px 15px;
     font-size: 2.2rem;
@@ -760,13 +760,50 @@ h1 img {
 /*----------------------------------------------------------------------
 	ENTRIES
 ----------------------------------------------------------------------*/
-/* line 685, ../scss/styles.scss */
+/* line 686, ../scss/styles.scss */
 #list-container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* line 690, ../scss/styles.scss */
+/* line 692, ../scss/styles.scss */
+.no-results,
+.clear-sort {
+  text-align: center;
+  padding: 20px;
+}
+/* line 696, ../scss/styles.scss */
+.no-results p,
+.clear-sort p {
+  font-size: 1.8rem;
+  line-height: 30px;
+}
+/* line 701, ../scss/styles.scss */
+.no-results button,
+.clear-sort button {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 4.5px 20px;
+  display: inline-block;
+  height: 35px;
+  color: #fff;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(230deg, #a24bcf, #4b79cf, #4bc5cf);
+  background-size: 200% 200%;
+  -webkit-animation: ButtonGradient 30s ease infinite;
+  -moz-animation: ButtonGradient 30s ease infinite;
+  -o-animation: ButtonGradient 30s ease infinite;
+  animation: ButtonGradient 30s ease infinite;
+  margin-top: 1rem;
+}
+
+/* line 720, ../scss/styles.scss */
+.clear-sort {
+  padding: 0 20px 100px;
+}
+
+/* line 724, ../scss/styles.scss */
 .list-group-item {
   -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
@@ -776,7 +813,7 @@ h1 img {
   background: #fff;
 }
 @media screen and (min-width: 550px) {
-  /* line 690, ../scss/styles.scss */
+  /* line 724, ../scss/styles.scss */
   .list-group-item {
     width: calc(50% - 22px);
     display: inline-block;
@@ -784,18 +821,18 @@ h1 img {
   }
 }
 @media screen and (min-width: 700px) {
-  /* line 690, ../scss/styles.scss */
+  /* line 724, ../scss/styles.scss */
   .list-group-item {
     width: calc(33% - 22px);
   }
 }
 @media screen and (min-width: 900px) {
-  /* line 690, ../scss/styles.scss */
+  /* line 724, ../scss/styles.scss */
   .list-group-item {
     width: calc(25% - 22px);
   }
 }
-/* line 713, ../scss/styles.scss */
+/* line 747, ../scss/styles.scss */
 .list-group-item:focus, .list-group-item:hover {
   background: -moz-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(20%, white), color-stop(100%, #eaf5fc));
@@ -804,7 +841,7 @@ h1 img {
   background: -ms-linear-gradient(top, white 0%, white 20%, #eaf5fc 100%);
   background: linear-gradient(to bottom, #ffffff 0%, #ffffff 20%, #eaf5fc 100%);
 }
-/* line 722, ../scss/styles.scss */
+/* line 756, ../scss/styles.scss */
 .list-group-item:before {
   content: "";
   display: block;
@@ -814,92 +851,92 @@ h1 img {
   width: 74px;
   height: 74px;
 }
-/* line 732, ../scss/styles.scss */
+/* line 766, ../scss/styles.scss */
 .list-group-item a {
   display: block;
   padding: 10px;
 }
-/* line 737, ../scss/styles.scss */
+/* line 771, ../scss/styles.scss */
 .list-group-item[location="Speed Art Museum"]:before {
   background: url("../img/speed-logo.png") no-repeat;
 }
-/* line 741, ../scss/styles.scss */
+/* line 775, ../scss/styles.scss */
 .list-group-item[location="KMAC"]:before {
   background: url("../img/kmac-logo.png") no-repeat;
 }
-/* line 745, ../scss/styles.scss */
+/* line 779, ../scss/styles.scss */
 .list-group-item[location="21c Louisville"]:before {
   background: url("../img/21clou-logo.png") no-repeat;
 }
-/* line 749, ../scss/styles.scss */
+/* line 783, ../scss/styles.scss */
 .list-group-item[location="21c Lexington"]:before {
   background: url("../img/21clex-logo.png") no-repeat;
 }
-/* line 753, ../scss/styles.scss */
+/* line 787, ../scss/styles.scss */
 .list-group-item[location="International Museum of the Horse"]:before {
   background: url("../img/horse-logo.png") no-repeat;
 }
-/* line 757, ../scss/styles.scss */
+/* line 791, ../scss/styles.scss */
 .list-group-item[location="University of Kentucky Art Museum"]:before {
   background: url("../img/uk-logo.png") no-repeat;
 }
-/* line 760, ../scss/styles.scss */
+/* line 794, ../scss/styles.scss */
 .list-group-item[location="National Quilt Museum"]:before {
   background: url("../img/quilt-logo.png") no-repeat;
 }
-/* line 763, ../scss/styles.scss */
+/* line 797, ../scss/styles.scss */
 .list-group-item[location="The Kentucky Museum"]:before {
   background: url("../img/wku-logo.png") no-repeat;
 }
-/* line 766, ../scss/styles.scss */
+/* line 800, ../scss/styles.scss */
 .list-group-item[location="Kentucky Folk Art Center"]:before {
   background: url("../img/folk-logo.png") no-repeat;
 }
-/* line 770, ../scss/styles.scss */
+/* line 804, ../scss/styles.scss */
 .list-group-item[category="Art of Ancient Cultures"] {
   border-bottom: 8px solid #5bc0eb;
 }
-/* line 774, ../scss/styles.scss */
+/* line 808, ../scss/styles.scss */
 .list-group-item[category="African Art"] {
   border-bottom: 8px solid #FF6214;
 }
-/* line 778, ../scss/styles.scss */
+/* line 812, ../scss/styles.scss */
 .list-group-item[category="Native American Art"] {
   border-bottom: 8px solid #E0479E;
 }
-/* line 782, ../scss/styles.scss */
+/* line 816, ../scss/styles.scss */
 .list-group-item[category="European Art, 1300-1700"] {
   border-bottom: 8px solid #95C623;
 }
-/* line 786, ../scss/styles.scss */
+/* line 820, ../scss/styles.scss */
 .list-group-item[category="European Art, 1700-1800"] {
   border-bottom: 8px solid #571760;
 }
-/* line 790, ../scss/styles.scss */
+/* line 824, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1800-1900"] {
   border-bottom: 8px solid #FFD43A;
 }
-/* line 794, ../scss/styles.scss */
+/* line 828, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1900-1945"] {
   border-bottom: 8px solid #0A2472;
 }
-/* line 798, ../scss/styles.scss */
+/* line 832, ../scss/styles.scss */
 .list-group-item[category="European and American Art, 1945-1980"] {
   border-bottom: 8px solid #C1292E;
 }
-/* line 802, ../scss/styles.scss */
+/* line 836, ../scss/styles.scss */
 .list-group-item[category="Dutch & Flemish Art"] {
   border-bottom: 8px solid #BAE6FF;
 }
-/* line 806, ../scss/styles.scss */
+/* line 840, ../scss/styles.scss */
 .list-group-item[category="Contemporary Art, 1980-Present"] {
   border-bottom: 8px solid #B36CC9;
 }
-/* line 810, ../scss/styles.scss */
+/* line 844, ../scss/styles.scss */
 .list-group-item[category="Art of Kentucky, 1800-1945"] {
   border-bottom: 8px solid #8B1E3F;
 }
-/* line 814, ../scss/styles.scss */
+/* line 848, ../scss/styles.scss */
 .list-group-item[category="Photography"] {
   border-bottom: 8px solid #6A6262;
 }
@@ -907,17 +944,23 @@ h1 img {
 /*----------------------------------------------------------------------
 	DETAILS PAGES
 ----------------------------------------------------------------------*/
-/* line 824, ../scss/styles.scss */
+/* line 858, ../scss/styles.scss */
 .background {
   position: absolute;
   top: 0;
-  padding: 40px;
+  padding: 20px;
   background: rgba(0, 0, 0, 0.65);
   width: 100%;
   height: 1000%;
 }
+@media screen and (min-width: 800px) {
+  /* line 858, ../scss/styles.scss */
+  .background {
+    padding: 40px;
+  }
+}
 
-/* line 833, ../scss/styles.scss */
+/* line 871, ../scss/styles.scss */
 #details {
   background: #fff;
   padding: 10px;
@@ -927,7 +970,7 @@ h1 img {
   text-align: center;
 }
 @media screen and (min-width: 800px) {
-  /* line 841, ../scss/styles.scss */
+  /* line 879, ../scss/styles.scss */
   #details #imageLarge {
     max-width: calc(65% - 23px);
     max-height: calc(100vh - 100px);
@@ -938,29 +981,29 @@ h1 img {
     width: auto;
   }
 }
-/* line 854, ../scss/styles.scss */
+/* line 892, ../scss/styles.scss */
 #details div {
   margin-top: 10px;
 }
-/* line 858, ../scss/styles.scss */
+/* line 896, ../scss/styles.scss */
 #details .text-wrapper {
   margin-top: 10px;
   position: relative;
   text-align: left;
 }
 @media screen and (min-width: 800px) {
-  /* line 858, ../scss/styles.scss */
+  /* line 896, ../scss/styles.scss */
   #details .text-wrapper {
     width: 30%;
     display: inline-block;
     vertical-align: top;
   }
 }
-/* line 870, ../scss/styles.scss */
+/* line 908, ../scss/styles.scss */
 #details div.hidden {
   display: none;
 }
-/* line 874, ../scss/styles.scss */
+/* line 912, ../scss/styles.scss */
 #details div#edit-form-container {
   position: absolute;
   width: 100%;
@@ -970,11 +1013,11 @@ h1 img {
   margin-top: 0;
   z-index: 10;
 }
-/* line 884, ../scss/styles.scss */
+/* line 922, ../scss/styles.scss */
 #details .art-entry {
   width: 100%;
 }
-/* line 893, ../scss/styles.scss */
+/* line 931, ../scss/styles.scss */
 #details .close-button,
 #details .submit-button,
 #details .edit-button,
@@ -991,7 +1034,7 @@ h1 img {
   color: #fff;
   background: #00345B;
 }
-/* line 904, ../scss/styles.scss */
+/* line 942, ../scss/styles.scss */
 #details .close-button:focus,
 #details .submit-button:focus,
 #details .edit-button:focus,
@@ -1000,21 +1043,21 @@ h1 img {
 #details #imageUpload:focus {
   outline: 0;
 }
-/* line 910, ../scss/styles.scss */
+/* line 948, ../scss/styles.scss */
 #details .close-button,
 #details .cancel-button {
   background: #888;
 }
-/* line 914, ../scss/styles.scss */
+/* line 952, ../scss/styles.scss */
 #details #imageUpload {
   margin-top: 0;
 }
-/* line 918, ../scss/styles.scss */
+/* line 956, ../scss/styles.scss */
 #details #button_container {
   width: initial;
 }
 
-/* line 926, ../scss/styles.scss */
+/* line 964, ../scss/styles.scss */
 #edit-form-container label {
   display: block;
   text-transform: uppercase;
@@ -1022,29 +1065,29 @@ h1 img {
   font-size: 1.4rem;
   line-height: 1;
 }
-/* line 934, ../scss/styles.scss */
+/* line 972, ../scss/styles.scss */
 #edit-form-container .form-group {
   display: block;
   width: 100%;
 }
-/* line 938, ../scss/styles.scss */
+/* line 976, ../scss/styles.scss */
 #edit-form-container .form-group:first-of-type {
   margin-top: 0;
 }
-/* line 944, ../scss/styles.scss */
+/* line 982, ../scss/styles.scss */
 #edit-form-container input,
 #edit-form-container select {
   width: 100%;
   height: 20px;
   padding: 0 5px;
 }
-/* line 952, ../scss/styles.scss */
+/* line 990, ../scss/styles.scss */
 #edit-form-container .submit-button,
 #edit-form-container .cancel-button,
 #edit-form-container .delete-button {
   margin: 2rem 1rem 0 0;
 }
-/* line 956, ../scss/styles.scss */
+/* line 994, ../scss/styles.scss */
 #edit-form-container .delete-button {
   background: #8B1E3F;
   margin-bottom: 20px;
