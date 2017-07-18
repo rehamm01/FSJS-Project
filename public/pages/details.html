@@ -33,8 +33,8 @@
 									<button id="imageUpload">Upload an Image</button>
 								</div>
 								<form id="add-file-form">
-									<input type="hidden" id="file-imageLarge" value="" />
-									<input type="hidden" id="file-imageSmall" value="" />
+									<input type="hidden" id="file-imageLarge" value="{{imageLarge}}" />
+									<input type="hidden" id="file-imageSmall" value="{{imageSmall}}" />
 									<input type="hidden" id="file-id" value="" />
 									<div class="form-group">
 										<label for="file-title">Title</label>
@@ -152,8 +152,8 @@
 			      imageLarge.src = "https://process.filestackapi.com/A1AJmUYdDTj2Y5wEFtRO7z/resize=h:600/" + Blob.url; 
 			      fileImageLarge.value = "https://process.filestackapi.com/A1AJmUYdDTj2Y5wEFtRO7z/resize=h:600/" + Blob.url;
 			      // 2
-			      imageSmall.src = "https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=w:400,h:400,fit:crop/" + Blob.url;
-			      fileImageSmall.value = "https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=w:400,h:400,fit:crop/" + Blob.url;
+			      imageSmall.src = "https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=w:400,h:400,fit:crop,align:top/" + Blob.url;
+			      fileImageSmall.value = "https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=w:400,h:400,fit:crop,align:top/" + Blob.url;
 			      console.log(fileImageLarge.value);
 			      console.log(fileImageSmall.value);
 			    }

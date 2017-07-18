@@ -75,12 +75,12 @@ function submitFileForm() {
   if (fileData._id) {
     method = 'PUT';
     url = '/api/file/' + fileData._id;
-    refreshFunction = refreshFileEntry();
+    refreshFunction = refreshFileEntry;
 
   } else {
     method = 'POST';
     url = '/api/file';
-    refreshFunction = refreshFileList();
+    refreshFunction = refreshFileList;
   }
 
   $.ajax({
@@ -93,7 +93,7 @@ function submitFileForm() {
   })
     .done(function(response) {
       console.log("Data Posted");
-      refreshFunction
+      refreshFunction();
       toggleAddFileForm();
 
       setTimeout( function thumbnailLoad(){ 
@@ -187,7 +187,7 @@ function deleteFileClick(id) {
 var getCategory = $(".list-group-item");
 
 function scrollToResults() {
-  $( '.header-button' ).toggleClass( "close-nav" );  // closes Nav
+  $( '.header-button' ).removeClass( "close-nav" );  // closes Nav
   $( ".header-nav").css('display', 'none');
 
   $('html, body').stop(true, false).animate({     // animation to results

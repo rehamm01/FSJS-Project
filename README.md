@@ -5,20 +5,31 @@ An Inventory for art-lovers to browse works of art contained in museums located 
 
 <br>
 
-Progress:
-1. Lightbox functionality removed. Artwork Entries are now on their own pages based on unique ID number.
-2. Fixed problem with Select Inputs not registering selection.
-3. Edit button working now that each Art Entry has it's own page.
-4. Fixed Delete Button bug
-5. Category Nav now functioning.
-6. Placeholder images now loading.
+How to run this application:
+1. In your Terminal, clone the project:
+```
+git clone https://github.com/rehamm01/FSJS-Project
+cd FSJS-Project
+``` 
+2. Install the necessary dependencies:
+```
+npm install
+``` 
+3. Begin the app server process:
+```
+npm start
+``` 
+4. In a new terminal tab, start Mongo:
+```
+mongod
+``` 
+5. Open a web browser and go to http://localhost:3030
+6. Enjoy Creating, Reading, Updating, and Deleting entries from the Ky Art Inventory!
 
-Current Objectives:
-1. Fix bug with 2nd Edit button click not filling out form with updated info.
-2. Fix bug with Image being deleted after second Edit.
+<br>
 
-Future Objectives:
+Future Goals:
 1. Include a Search Functionality so Users can Search the database by keyword.
-2. As the Inventory grows, it would be nice if only a few Entries loaded at first. Then as the user scrolls, more could appear. This would cut back on page weight when the site first loads.
-3. Improve site Accessibility: refine Keyboard navigation and include an "Artwork Description" field in the Submit Form and Database for users with vision-impairments.
+2. As the Inventory grows, it would be nice if only a few entries loaded at first. Then as the user scrolls, more could appear. This would cut back on page weight when the site first loads. (Very important on mobile devices!)
+3. Improve site Accessibility: refine Keyboard navigation and include an "Artwork Description" field in the Submit Form/Database so users with vision-impairments can still enjoy the site.
  
