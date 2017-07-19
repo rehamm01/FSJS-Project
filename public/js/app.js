@@ -46,7 +46,6 @@ function refreshFileEntry() {
 // Toggle Edit Form
 function toggleAddFileForm() {
   setFormData({});
-  toggleAddFileFormVisibility();
 }
 
 function toggleAddFileFormVisibility() {
@@ -115,19 +114,25 @@ function submitFileForm() {
       console.log("Posting failed", error);
     })
 
-  console.log("Your file data", fileData);
+    $('.entry-wrapper').removeClass('hidden');
+    $('#edit-form-container').addClass('hidden');
+
+    console.log("Your file data", fileData);
 }
 
 
 // Closes the Edit Form in case the user changes their mind
 function cancelFileForm() {
-  toggleAddFileFormVisibility();
+  $('.entry-wrapper').removeClass('hidden');
+  $('#edit-form-container').addClass('hidden');
 }
 
 
 // Edit data in DB
 function editFileClick(id) {
     const file = window.fileList.find(file => file._id === id);
+
+  $('.entry-wrapper').addClass('hidden');
 
   if (file) {
     setFormData(file);

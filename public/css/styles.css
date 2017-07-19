@@ -1005,19 +1005,17 @@ h1 img {
 }
 /* line 912, ../scss/styles.scss */
 #details div#edit-form-container {
-  position: absolute;
   width: 100%;
   top: 0;
-  height: 100%;
   background: #fff;
   margin-top: 0;
   z-index: 10;
 }
-/* line 922, ../scss/styles.scss */
+/* line 920, ../scss/styles.scss */
 #details .art-entry {
   width: 100%;
 }
-/* line 931, ../scss/styles.scss */
+/* line 929, ../scss/styles.scss */
 #details .close-button,
 #details .submit-button,
 #details .edit-button,
@@ -1034,7 +1032,7 @@ h1 img {
   color: #fff;
   background: #00345B;
 }
-/* line 942, ../scss/styles.scss */
+/* line 940, ../scss/styles.scss */
 #details .close-button:focus,
 #details .submit-button:focus,
 #details .edit-button:focus,
@@ -1043,21 +1041,21 @@ h1 img {
 #details #imageUpload:focus {
   outline: 0;
 }
-/* line 948, ../scss/styles.scss */
+/* line 946, ../scss/styles.scss */
 #details .close-button,
 #details .cancel-button {
   background: #888;
 }
-/* line 952, ../scss/styles.scss */
+/* line 950, ../scss/styles.scss */
 #details #imageUpload {
   margin-top: 0;
 }
-/* line 956, ../scss/styles.scss */
+/* line 954, ../scss/styles.scss */
 #details #button_container {
   width: initial;
 }
 
-/* line 964, ../scss/styles.scss */
+/* line 962, ../scss/styles.scss */
 #edit-form-container label {
   display: block;
   text-transform: uppercase;
@@ -1065,29 +1063,29 @@ h1 img {
   font-size: 1.4rem;
   line-height: 1;
 }
-/* line 972, ../scss/styles.scss */
+/* line 970, ../scss/styles.scss */
 #edit-form-container .form-group {
   display: block;
   width: 100%;
 }
-/* line 976, ../scss/styles.scss */
+/* line 974, ../scss/styles.scss */
 #edit-form-container .form-group:first-of-type {
   margin-top: 0;
 }
-/* line 982, ../scss/styles.scss */
+/* line 980, ../scss/styles.scss */
 #edit-form-container input,
 #edit-form-container select {
   width: 100%;
   height: 20px;
   padding: 0 5px;
 }
-/* line 990, ../scss/styles.scss */
+/* line 988, ../scss/styles.scss */
 #edit-form-container .submit-button,
 #edit-form-container .cancel-button,
 #edit-form-container .delete-button {
   margin: 2rem 1rem 0 0;
 }
-/* line 994, ../scss/styles.scss */
+/* line 992, ../scss/styles.scss */
 #edit-form-container .delete-button {
   background: #8B1E3F;
   margin-bottom: 20px;
